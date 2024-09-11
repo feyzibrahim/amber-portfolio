@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import Articles from "./articles";
 import { Button } from "./ui/button";
 
 export default function AuthoredArticles() {
@@ -80,23 +79,7 @@ export default function AuthoredArticles() {
 		<div className="py-10">
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 				{articles.slice(0, visibleArticles).map((article, index) => (
-					<Link
-						key={index}
-						href={article.link}
-						target="_blank"
-						className="hover:shadow-lg p-2"
-					>
-						<div>
-							<Image
-								src={article.src}
-								alt=""
-								width={958}
-								height={541}
-								className="rounded-md h-52 w-full object-cover"
-							/>
-							<p>{article.title}</p>
-						</div>
-					</Link>
+					<Articles article={article} index={index} />
 				))}
 			</div>
 

@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Publication from "./publication";
 
 export default function Publications() {
 	// All the articles
@@ -96,28 +97,7 @@ export default function Publications() {
 					transition={{ duration: 0.5 }}
 				>
 					{articles.map((article, index) => (
-						<Link
-							key={index}
-							href={article.link}
-							target="_blank"
-							className="flex-shrink-0"
-						>
-							<div className="relative flex-shrink-0 h-96" key={index}>
-								<Image
-									src={article.src}
-									alt={article.description}
-									width={958} // Actual width of the image
-									height={400} // Fixed height
-									className="rounded-md h-80 w-full object-cover"
-								/>
-								<h1 className="absolute bottom-16 left-1 text-3xl w-2/3 font-bold text-white text-shadow">
-									{article.title}
-								</h1>
-								<p className="absolute text-xs pt-2">
-									{article.description}
-								</p>
-							</div>
-						</Link>
+						<Publication publication={article} index={index} />
 					))}
 				</motion.div>
 			</div>

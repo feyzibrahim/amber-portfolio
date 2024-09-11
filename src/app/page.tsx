@@ -1,26 +1,21 @@
 "use client";
-import Navbar from "@/components/navbar";
-import Image from "next/image";
-import { montserrat } from "./fonts/fonts";
-import { Instagram, Linkedin, Twitter } from "lucide-react";
-import Link from "next/link";
-import FeaturedCompanies from "@/components/featured-companies";
 import AuthoredArticles from "@/components/authored-articles";
+import FeaturedCompanies from "@/components/featured-companies";
+import FirstSection from "@/components/first-section";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import PublishedPapers from "@/components/papers-published";
 import Publications from "@/components/publications";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Button } from "@/components/ui/button";
+import { montserrat } from "./fonts/fonts";
 
 export default function Home() {
 	const { ref, inView } = useInView({
 		threshold: 0.5, // Trigger when 10% of the element is visible
 		triggerOnce: true, // Trigger only once
 	});
-	const { ref: ref1, inView: inView1 } = useInView({
-		threshold: 0.5, // Trigger when 10% of the element is visible
-		triggerOnce: true, // Trigger only once
-	});
+
 	const { ref: ref2, inView: inView2 } = useInView({
 		threshold: 0.5,
 		triggerOnce: true,
@@ -33,53 +28,23 @@ export default function Home() {
 		threshold: 0.1,
 		triggerOnce: true,
 	});
-	const { ref: ref5, inView: inView5 } = useInView({
-		threshold: 0.5,
-		triggerOnce: true,
-	});
 
 	return (
 		<div>
 			<Navbar />
-			<motion.div
-				ref={ref1}
-				initial={{ opacity: 0, y: 100 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.8 }}
-				className="common-style flex flex-col gap-8 items-center text-center border-b"
-			>
-				<div className="absolute top-0 w-full bg-background-secondary h-1/2 -z-10"></div>
-				<h1 className={`text-2xl md:text-4xl font-bold ${montserrat.className}`}>
-					Meet Amber Nigam
-				</h1>
-				<Image
-					className="md:w-3/12 shadow-lg"
-					src="/amber.png"
-					alt="Amber Nigam"
-					width={403}
-					height={448}
-					priority
-				/>
-				<p className="md:w-2/3 leading-relaxed tracking-wide">
-					Amber Nigam is the Co-founder and CEO of Basys.ai, a digital health
-					startup optimizing healthcare workflows with AI. A Harvard graduate,
-					his work in AI and healthcare has been recognized in top conferences
-					and journals.
-				</p>
-			</motion.div>
-			<motion.div
-				ref={ref}
-				initial={{ opacity: 0, y: 100 }}
-				animate={inView ? { opacity: 1, y: 0 } : {}}
-				transition={{ duration: 0.8 }}
-				className="common-style py-12"
-				id="publications"
-			>
-				<h1 className={`text-4xl font-bold text-center ${montserrat.className}`}>
+			<FirstSection />
+			<div className="common-style py-12" id="publications">
+				<motion.h1
+					ref={ref}
+					initial={{ opacity: 0, y: 100 }}
+					animate={inView ? { opacity: 1, y: 0 } : {}}
+					transition={{ duration: 0.8 }}
+					className={`text-4xl font-bold text-center ${montserrat.className}`}
+				>
 					Publications
-				</h1>
+				</motion.h1>
 				<Publications />
-			</motion.div>
+			</div>
 			<motion.div
 				ref={ref2}
 				initial={{ opacity: 0, y: 100 }}
@@ -99,92 +64,31 @@ export default function Home() {
 					</div>
 				</div>
 			</motion.div>
-			<motion.div
-				ref={ref3}
-				initial={{ opacity: 0, y: 100 }}
-				animate={inView3 ? { opacity: 1, y: 0 } : {}}
-				transition={{ duration: 0.8 }}
-				className="common-style py-12"
-				id="articles"
-			>
-				<h1 className={`text-4xl font-bold text-center ${montserrat.className}`}>
+			<div className="common-style py-12" id="articles">
+				<motion.h1
+					ref={ref3}
+					initial={{ opacity: 0, y: 20 }}
+					animate={inView3 ? { opacity: 1, y: 0 } : {}}
+					transition={{ duration: 0.8 }}
+					className={`text-4xl font-bold text-center ${montserrat.className}`}
+				>
 					Authored Articles
-				</h1>
+				</motion.h1>
 				<AuthoredArticles />
-			</motion.div>
-			<motion.div
-				ref={ref4}
-				initial={{ opacity: 0, y: 100 }}
-				animate={inView4 ? { opacity: 1, y: 0 } : {}}
-				transition={{ duration: 0.8 }}
-				className="common-style py-12"
-				id="articles"
-			>
-				<h1 className={`text-4xl font-bold text-center ${montserrat.className}`}>
+			</div>
+			<div className="common-style py-12" id="articles">
+				<motion.h1
+					ref={ref4}
+					initial={{ opacity: 0, y: 100 }}
+					animate={inView4 ? { opacity: 1, y: 0 } : {}}
+					transition={{ duration: 0.8 }}
+					className={`text-4xl font-bold text-center ${montserrat.className}`}
+				>
 					Papers Published
-				</h1>
+				</motion.h1>
 				<PublishedPapers />
-			</motion.div>
-			<motion.div
-				ref={ref5}
-				initial={{ opacity: 0, y: 100 }}
-				animate={inView5 ? { opacity: 1, y: 0 } : {}}
-				transition={{ duration: 0.8 }}
-				className="common-padding grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 bg-background-secondary"
-			>
-				<div>
-					<h1 className="text-3xl font-semibold">Amber Nigam</h1>
-					<p className="text-gray-400 mt-4">
-						CEO and Co-founder of{" "}
-						<Link
-							href="https://www.basys.ai/"
-							target="_blank"
-							className="text-basys hover:underline"
-						>
-							basys.ai.
-						</Link>{" "}
-						Leading innovations in AI and healthcare.
-					</p>
-					<div className="flex gap-3 pt-5">
-						<Link
-							href="https://www.linkedin.com/in/amber-nigam/"
-							target="_blank"
-							className="text-basys hover:underline"
-						>
-							<Linkedin />
-						</Link>
-						<Link
-							href="https://x.com/AmBeRnIgAm"
-							target="_blank"
-							className="text-basys hover:underline"
-						>
-							<Twitter />
-						</Link>
-						<Link
-							href="https://www.instagram.com/amber.nigam"
-							target="_blank"
-							className="text-basys hover:underline"
-						>
-							<Instagram />
-						</Link>
-					</div>
-				</div>
-				<div className="flex flex-col gap-4">
-					<input
-						type="text"
-						placeholder="First name"
-						className="p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-					/>
-					<input
-						type="email"
-						placeholder="Enter your email"
-						className="p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-					/>
-					<Link href="mailto:amber@basys.ai" className="mx-auto">
-						<Button type="submit">Get In Touch</Button>
-					</Link>
-				</div>
-			</motion.div>
+			</div>
+			<Footer />
 		</div>
 	);
 }

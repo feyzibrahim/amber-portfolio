@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
+import Papers from "./papers";
 import { Button } from "./ui/button";
 
 export default function PublishedPapers() {
@@ -103,13 +103,7 @@ export default function PublishedPapers() {
 		<div className="py-10">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 				{papers.slice(0, visiblePapers).map((paper, index) => (
-					<div key={index} className="border p-4 rounded-md shadow-sm">
-						<Link href={paper.link} target="_blank">
-							<h2 className="text-lg font-semibold mb-2">{paper.title}</h2>
-						</Link>
-						<p className="text-sm text-gray-500">{paper.author}</p>
-						<p className="text-sm text-gray-500">Year: {paper.year}</p>
-					</div>
+					<Papers index={index} paper={paper} />
 				))}
 			</div>
 

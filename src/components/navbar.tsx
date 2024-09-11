@@ -60,9 +60,9 @@ export default function Navbar() {
 					<p className="text-foreground-secondary cursor-pointer hover:text-foreground">
 						<Link href="#articles">Articles</Link>
 					</p>
-					<p className="text-foreground-secondary cursor-pointer hover:text-foreground">
+					{/* <p className="text-foreground-secondary cursor-pointer hover:text-foreground">
 						<Link href="#about">About</Link>
-					</p>
+					</p> */}
 				</div>
 				<div className="hidden md:flex justify-end gap-5">
 					<Link href="mailto:amber@basys.ai">
