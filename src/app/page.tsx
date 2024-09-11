@@ -1,3 +1,4 @@
+"use client";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 import { montserrat } from "./fonts/fonts";
@@ -6,12 +7,46 @@ import Link from "next/link";
 import FeaturedCompanies from "@/components/featured-companies";
 import AuthoredArticles from "@/components/authored-articles";
 import PublishedPapers from "@/components/papers-published";
+import Publications from "@/components/publications";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
+	const { ref, inView } = useInView({
+		threshold: 0.5, // Trigger when 10% of the element is visible
+		triggerOnce: true, // Trigger only once
+	});
+	const { ref: ref1, inView: inView1 } = useInView({
+		threshold: 0.5, // Trigger when 10% of the element is visible
+		triggerOnce: true, // Trigger only once
+	});
+	const { ref: ref2, inView: inView2 } = useInView({
+		threshold: 0.5,
+		triggerOnce: true,
+	});
+	const { ref: ref3, inView: inView3 } = useInView({
+		threshold: 0.1,
+		triggerOnce: true,
+	});
+	const { ref: ref4, inView: inView4 } = useInView({
+		threshold: 0.1,
+		triggerOnce: true,
+	});
+	const { ref: ref5, inView: inView5 } = useInView({
+		threshold: 0.5,
+		triggerOnce: true,
+	});
+
 	return (
 		<div>
 			<Navbar />
-			<main className="common-style flex flex-col gap-8 items-center text-center border-b">
+			<motion.div
+				ref={ref1}
+				initial={{ opacity: 0, y: 100 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8 }}
+				className="common-style flex flex-col gap-8 items-center text-center border-b"
+			>
 				<div className="absolute top-0 w-full bg-background-secondary h-1/2 -z-10"></div>
 				<h1 className={`text-2xl md:text-4xl font-bold ${montserrat.className}`}>
 					Meet Amber Nigam
@@ -30,13 +65,27 @@ export default function Home() {
 					his work in AI and healthcare has been recognized in top conferences
 					and journals.
 				</p>
-			</main>
-			<div className="common-style py-12" id="publications">
+			</motion.div>
+			<motion.div
+				ref={ref}
+				initial={{ opacity: 0, y: 100 }}
+				animate={inView ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className="common-style py-12"
+				id="publications"
+			>
 				<h1 className={`text-4xl font-bold text-center ${montserrat.className}`}>
 					Publications
 				</h1>
-			</div>
-			<div className="common-padding bg-background-secondary py-12">
+				<Publications />
+			</motion.div>
+			<motion.div
+				ref={ref2}
+				initial={{ opacity: 0, y: 100 }}
+				animate={inView2 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className="common-padding bg-background-secondary py-12"
+			>
 				<h1 className={`text-4xl font-bold text-center ${montserrat.className}`}>
 					Featured In
 				</h1>
@@ -48,20 +97,40 @@ export default function Home() {
 						<FeaturedCompanies />
 					</div>
 				</div>
-			</div>
-			<div className="common-style py-12" id="articles">
+			</motion.div>
+			<motion.div
+				ref={ref3}
+				initial={{ opacity: 0, y: 100 }}
+				animate={inView3 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className="common-style py-12"
+				id="articles"
+			>
 				<h1 className={`text-4xl font-bold text-center ${montserrat.className}`}>
 					Authored Articles
 				</h1>
 				<AuthoredArticles />
-			</div>
-			<div className="common-style py-12" id="articles">
+			</motion.div>
+			<motion.div
+				ref={ref4}
+				initial={{ opacity: 0, y: 100 }}
+				animate={inView4 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className="common-style py-12"
+				id="articles"
+			>
 				<h1 className={`text-4xl font-bold text-center ${montserrat.className}`}>
 					Papers Published
 				</h1>
 				<PublishedPapers />
-			</div>
-			<footer className="common-padding grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 bg-background-secondary">
+			</motion.div>
+			<motion.div
+				ref={ref5}
+				initial={{ opacity: 0, y: 100 }}
+				animate={inView5 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className="common-padding grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 bg-background-secondary"
+			>
 				<div>
 					<h1 className="text-3xl font-semibold">Amber Nigam</h1>
 					<p className="text-gray-400 mt-4">
@@ -109,7 +178,7 @@ export default function Home() {
 						className="p-4 bg-basys cursor-pointer text-white rounded-md hover:bg-gray-900 transition"
 					/>
 				</div>
-			</footer>
+			</motion.div>
 		</div>
 	);
 }

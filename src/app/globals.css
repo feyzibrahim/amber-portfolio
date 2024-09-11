@@ -75,3 +75,7 @@ html {
 .common-padding {
 	@apply px-5 lg:px-40 py-20;
 }
+
+.text-shadow {
+	text-shadow: 0px 0px 10px black;
+}
