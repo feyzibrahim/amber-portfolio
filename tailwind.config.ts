@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { DEFAULT_CIPHERS } from "tls";
 
 const config: Config = {
 	darkMode: ["class"],
@@ -18,6 +19,7 @@ const config: Config = {
 					DEFAULT: "hsl(var(--foreground))",
 					secondary: "hsl(var(--foreground-secondary))",
 				},
+				basys: "hsl(var(--basys))",
 				card: {
 					DEFAULT: "hsl(var(--card))",
 					foreground: "hsl(var(--card-foreground))",
@@ -61,6 +63,20 @@ const config: Config = {
 				lg: "var(--radius)",
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
+			},
+			animation: {
+				marquee: "marquee 25s linear infinite",
+				marqueeOpposite: "marqueeOpposite 25s linear infinite",
+			},
+			keyframes: {
+				marquee: {
+					"0%": { transform: "translateX(0%)" },
+					"100%": { transform: "translateX(-100%)" },
+				},
+				marqueeOpposite: {
+					"0%": { transform: "translateX(100%)" },
+					"100%": { transform: "translateX(0%)" },
+				},
 			},
 		},
 	},

@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	scroll-behavior: smooth;
+}
+
 @layer base {
 	:root {
 		--background: 0 0% 100%;
 		--background-secondary: 48, 29%, 97%;
 		--foreground: 240 10% 3.9%;
 		--foreground-secondary: 0, 0%, 49%;
+		--basys: 214, 41%, 33%;
 		--card: 0 0% 100%;
 		--card-foreground: 240 10% 3.9%;
 		--popover: 0 0% 100%;
@@ -37,6 +42,7 @@
 		--background-secondary: 0, 0%, 12%;
 		--foreground: 0 0% 98%;
 		--foreground-secondary: 0, 0%, 49%;
+		--basys: 214, 41%, 33%;
 		--card: 240 10% 3.9%;
 		--card-foreground: 0 0% 98%;
 		--popover: 240 10% 3.9%;
