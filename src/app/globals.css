@@ -79,3 +79,7 @@ html {
 .text-shadow {
 	text-shadow: 0px 0px 10px black;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}

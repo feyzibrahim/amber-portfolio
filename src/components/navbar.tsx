@@ -5,15 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
 
 export default function Navbar() {
-	const { ref, inView } = useInView({
-		threshold: 0.5, // Trigger when 10% of the element is visible
-		triggerOnce: true, // Trigger only once
-	});
-
 	const [isVisible, setIsVisible] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State for managing drawer visibility
@@ -50,10 +43,7 @@ export default function Navbar() {
 	return (
 		<>
 			{/* Navbar */}
-			<motion.div
-				ref={ref}
-				initial={{ opacity: 0, y: -60 }}
-				animate={{ opacity: 1, y: 0 }}
+			<nav
 				className={`w-full px-5 lg:px-40 py-2 grid grid-cols-2 md:grid-cols-3 items-center fixed top-0 left-0 transition-transform duration-300 bg-background-secondary shadow-md z-50 ${
 					isVisible ? "translate-y-0" : "-translate-y-full"
 				}`}
@@ -75,14 +65,16 @@ export default function Navbar() {
 					</p>
 				</div>
 				<div className="hidden md:flex justify-end gap-5">
-					<Button>Get In Touch</Button>
+					<Link href="mailto:amber@basys.ai">
+						<Button>Get In Touch</Button>
+					</Link>
 					<ModeToggle />
 				</div>
 				{/* Drawer toggle button */}
 				<div className="lg:hidden flex justify-end">
 					<AlignJustify onClick={toggleDrawer} className="cursor-pointer" />
 				</div>
-			</motion.div>
+			</nav>
 
 			{/* Drawer */}
 			<div
@@ -112,9 +104,11 @@ export default function Navbar() {
 							<p>Switch Theme: </p>
 							<ModeToggle />
 						</div>
-						<Button className="mt-5 w-full" onClick={toggleDrawer}>
-							Get In Touch
-						</Button>
+						<Link href="mailto:amber@basys.ai">
+							<Button className="mt-5 w-full" onClick={toggleDrawer}>
+								Get In Touch
+							</Button>
+						</Link>
 					</nav>
 				</div>
 			</div>

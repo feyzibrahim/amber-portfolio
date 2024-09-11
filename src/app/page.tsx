@@ -2,7 +2,7 @@
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 import { montserrat } from "./fonts/fonts";
-import { Linkedin, Twitter } from "lucide-react";
+import { Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import FeaturedCompanies from "@/components/featured-companies";
 import AuthoredArticles from "@/components/authored-articles";
@@ -10,6 +10,7 @@ import PublishedPapers from "@/components/papers-published";
 import Publications from "@/components/publications";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
 	const { ref, inView } = useInView({
@@ -159,6 +160,13 @@ export default function Home() {
 						>
 							<Twitter />
 						</Link>
+						<Link
+							href="https://www.instagram.com/amber.nigam"
+							target="_blank"
+							className="text-basys hover:underline"
+						>
+							<Instagram />
+						</Link>
 					</div>
 				</div>
 				<div className="flex flex-col gap-4">
@@ -172,11 +180,9 @@ export default function Home() {
 						placeholder="Enter your email"
 						className="p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
 					/>
-					<input
-						type="submit"
-						value="Get In Touch"
-						className="p-4 bg-basys cursor-pointer text-white rounded-md hover:bg-gray-900 transition"
-					/>
+					<Link href="mailto:amber@basys.ai" className="mx-auto">
+						<Button type="submit">Get In Touch</Button>
+					</Link>
 				</div>
 			</motion.div>
 		</div>

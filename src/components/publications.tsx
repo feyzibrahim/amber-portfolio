@@ -1,7 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Publications() {
 	// All the articles
@@ -9,208 +10,118 @@ export default function Publications() {
 		{
 			title: "Forbes Publications",
 			link: "https://www.forbes.com/sites/frederickdaso/2022/09/05/two-harvard-students-revolutionize-diabetes-treatment-on-a-regular-basys/",
-			src: "/articles/true-north.webp",
+			src: "/pub/harvard-ai.jpg",
 			description:
 				"Basys.ai, a Harvard student-founded startup, uses AI to improve diabetes treatment by providing doctors with personalized clinical decision support.",
 		},
 		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2024/07/29/the-ai-revolution-in-healthcare-how-legacy-providers-can-adapt/",
-			src: "/articles/ai-revolution.webp",
+			title: "The Harvard Gazette",
+			link: "https://news.harvard.edu/gazette/story/newsplus/transforming-public-health-through-social-innovation/",
+			src: "/pub/transforming.webp",
 			description:
-				"The AI Revolution In Healthcare: How Legacy Providers Can Adapt",
+				"Amber selected as one of Cheng's fellows at Harvard Kennedy School",
 		},
 		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2024/06/11/evaluating-ai-startups-finding-the-novel-and-necessary-in-all-the-noise/",
-			src: "/articles/evaluating-ai.webp",
-			description:
-				"Evaluating AI Startups: Finding The Novel And Necessary In All The Noise",
+			title: "Harvard T.H Chan",
+			link: "https://www.hsph.harvard.edu/news/features/need-help-managing-diabetes-these-students-made-an-app-for-that/",
+			src: "/pub/need-help.webp",
+			description: "Amber's interview published by Harvard",
 		},
 		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2024/05/15/how-large-language-models-are-putting-skin-in-the-healthcare-game/",
-			src: "/articles/how-large.webp",
-			description:
-				"How Large Language Models Are Putting Skin In The Healthcare Game",
+			title: "The Business Journals",
+			link: "https://www.bizjournals.com/boston/inno/stories/news/2022/10/04/ai-startup-from-harvard-innovation-labs-launches.html",
+			src: "/pub/ai-startup.webp",
+			description: "Boston Business Journal covers the launch of basys.ai",
 		},
 		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2024/04/08/state-of-the-pharma-industry-present-and-future/",
-			src: "/articles/state-of.webp",
-			description: "State Of The Pharma Industry: Present And Future",
+			title: "NASDAQ",
+			link: "https://www.nasdaq.com/articles/amber-nigam%3A-improving-metabolic-health-for-billions-through-ai",
+			src: "/pub/nasdaq.png",
+			description: "Nasdaq publishes Amber's story and motivation for starting up",
 		},
 		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2024/03/05/how-prior-authorization-reforms-can-help-value-based-care/",
-			src: "/articles/how-prior.webp",
-			description: "How Prior Authorization Reforms Can Help Value-Based Care",
+			title: "MIT News",
+			link: "https://news.mit.edu/2020/what-is-covid-19-data-tsunami-telling-policymakers-0701",
+			src: "/pub/amber.webp",
+			description: "MIT News publishes Amber",
 		},
 		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2024/01/22/disruption-and-change-healthcare-trends-and-predictions-for-2024/",
-			src: "/articles/disruption.webp",
-			description:
-				"Disruption And Change: Healthcare Trends And Predictions For 2024",
+			title: "NYC Daily Post",
+			link: "https://nycdailypost.com/2022/06/16/health/amber-nigam-boston-congress-of-public-health-40-under-40-winner/",
+			src: "/pub/nyc.webp",
+			description: "Amber awarded 40 under 40 and published by NYC Daily Post",
 		},
 		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2024/01/19/18-cost-cutting-business-strategies-to-leverage-in-2024/",
-			src: "/articles/18-cost.webp",
-			description: "18 Cost-Cutting Business Strategies To Leverage In 2024",
-		},
-		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2023/12/04/generative-ai-the-next-frontier-of-healthcare/",
-			src: "/articles/generative-ai.webp",
-			description: "Generative AI: The Next Frontier Of Healthcare",
-		},
-		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2023/11/28/10-ways-leaders-can-smoothly-bring-on-a-new-c-suite-executive/",
-			src: "/articles/10-ways.webp",
-			description: "10 Ways Leaders Can Smoothly Bring On A New C-Suite Executive",
-		},
-		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2023/10/30/5-considerations-for-health-plan-leaders-using-ai-enabled-prior-authorization-and-utilization-management/",
-			src: "/articles/5-consideration.webp",
-			description:
-				"5 Considerations For Health Plan Leaders Using AI-Enabled Prior Authorization And Utilization Management",
-		},
-		{
-			title: "",
-			link: "https://www.forbes.com/councils/forbesbusinesscouncil/2023/10/13/19-creative-customer-loyalty-program-ideas-for-small-businesses/",
-			src: "/articles/18-creative.webp",
-			description:
-				"18 Creative Customer Loyalty Program Ideas For Small Businesses",
+			title: "YOURSTORY",
+			link: "https://yourstory.com/2022/08/basys-ai-harvard-healthtech-startup-india-ayushman-bharat",
+			src: "/pub/yourstory.avif",
+			description: "YourStory covers basys.ai's India debut",
 		},
 	];
 
-	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isSliding, setIsSliding] = useState(false);
-	const [slideDirection, setSlideDirection] = useState(""); // "left" or "right"
-	const [visibleArticles, setVisibleArticles] = useState(3); // Set default visible articles
+	const carouselRef = useRef<HTMLDivElement>(null);
 
-	// Function to handle next article click
+	// Function to handle scroll to the next section
 	const handleNext = () => {
-		if (!isSliding) {
-			setSlideDirection("right");
+		if (carouselRef.current && !isSliding) {
 			setIsSliding(true);
-			setTimeout(() => {
-				setCurrentIndex((prevIndex) =>
-					prevIndex + visibleArticles >= articles.length
-						? 0
-						: prevIndex + visibleArticles
-				);
-				setIsSliding(false);
-			}, 500); // Transition time should match CSS
+			carouselRef.current.scrollBy({
+				left: carouselRef.current.offsetWidth,
+				behavior: "smooth",
+			});
+			setTimeout(() => setIsSliding(false), 500); // Delay to match scroll time
 		}
 	};
 
-	// Function to handle previous article click
+	// Function to handle scroll to the previous section
 	const handlePrev = () => {
-		if (!isSliding) {
-			setSlideDirection("left");
+		if (carouselRef.current && !isSliding) {
 			setIsSliding(true);
-			setTimeout(() => {
-				setCurrentIndex((prevIndex) =>
-					prevIndex === 0
-						? articles.length - visibleArticles
-						: prevIndex - visibleArticles
-				);
-				setIsSliding(false);
-			}, 500); // Transition time should match CSS
+			carouselRef.current.scrollBy({
+				left: -carouselRef.current.offsetWidth,
+				behavior: "smooth",
+			});
+			setTimeout(() => setIsSliding(false), 500);
 		}
 	};
-
-	// Auto-slide logic
-	// useEffect(() => {
-	// 	const interval = setInterval(() => {
-	// 		handleNext();
-	// 	}, 5000); // Change article every 5 seconds
-	// 	return () => clearInterval(interval); // Clear the interval on component unmount
-	// }, [currentIndex]);
-
-	// Set responsive behavior
-	const handleResize = () => {
-		// Check screen size to display 1 article on small screens
-		if (window.innerWidth <= 768) {
-			setVisibleArticles(1); // 1 article visible on small screens
-		} else {
-			setVisibleArticles(3); // Default to 3 articles on larger screens
-		}
-	};
-
-	// Listen for window resize event
-	useEffect(() => {
-		window.addEventListener("resize", handleResize);
-		handleResize(); // Call the handler immediately to set the initial state
-		return () => window.removeEventListener("resize", handleResize);
-	}, []);
-
-	// Dots for navigation
-	const totalSlides = Math.ceil(articles.length / visibleArticles);
 
 	return (
 		<div className="relative">
-			<div className="py-10 overflow-hidden">
+			<div className="py-10">
 				{/* Carousel */}
-				<div
-					className={`flex gap-5 transform transition-transform duration-500 ${
-						slideDirection === "right"
-							? "translate-x-[-100%]"
-							: slideDirection === "left"
-							? "translate-x-[100%]"
-							: "translate-x-0"
-					}`}
-					style={{
-						transform: `translateX(${
-							-currentIndex * (100 / visibleArticles)
-						}%)`,
-					}}
+				<motion.div
+					ref={carouselRef}
+					className="flex flex-1 gap-5 overflow-x-scroll overflow-y-hidden hide-scrollbar scroll-smooth"
+					transition={{ duration: 0.5 }}
 				>
 					{articles.map((article, index) => (
 						<Link
 							key={index}
 							href={article.link}
 							target="_blank"
-							className="p-2"
+							className="flex-shrink-0"
 						>
-							<div className="w-72 md:w-80">
-								<div className="h-96 relative">
-									<Image
-										src={article.src}
-										alt={article.description}
-										width={958}
-										height={441}
-										className=" rounded-md h-96 w-80 object-cover"
-									/>
-									<h1 className="absolute bottom-2 left-2 text-3xl w-1/2 font-bold text-white text-shadow">
-										{article.title}
-									</h1>
-								</div>
-								<p className="text-xs pt-2">{article.description}</p>
+							<div className="relative flex-shrink-0 h-96" key={index}>
+								<Image
+									src={article.src}
+									alt={article.description}
+									width={958} // Actual width of the image
+									height={400} // Fixed height
+									className="rounded-md h-80 w-full object-cover"
+								/>
+								<h1 className="absolute bottom-16 left-1 text-3xl w-2/3 font-bold text-white text-shadow">
+									{article.title}
+								</h1>
+								<p className="absolute text-xs pt-2">
+									{article.description}
+								</p>
 							</div>
 						</Link>
 					))}
-				</div>
-
-				{/* Dots for Pagination */}
-				<div className="flex justify-center mt-5 space-x-2">
-					{Array.from({ length: totalSlides }).map((_, dotIndex) => (
-						<button
-							key={dotIndex}
-							className={`w-3 h-3 rounded-full ${
-								dotIndex === Math.floor(currentIndex / visibleArticles)
-									? "bg-blue-600"
-									: "bg-gray-300"
-							}`}
-							onClick={() => setCurrentIndex(dotIndex * visibleArticles)}
-						></button>
-					))}
-				</div>
+				</motion.div>
 			</div>
+
 			{/* Left and Right buttons */}
 			<button
 				onClick={handlePrev}
