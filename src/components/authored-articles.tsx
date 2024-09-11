@@ -79,7 +79,7 @@ export default function AuthoredArticles() {
 		<div className="py-10">
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 				{articles.slice(0, visibleArticles).map((article, index) => (
-					<Articles article={article} index={index} />
+					<Articles article={article} index={index} key={index} />
 				))}
 			</div>
 

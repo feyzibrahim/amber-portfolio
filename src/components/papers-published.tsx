@@ -103,7 +103,7 @@ export default function PublishedPapers() {
 		<div className="py-10">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 				{papers.slice(0, visiblePapers).map((paper, index) => (
-					<Papers index={index} paper={paper} />
+					<Papers index={index} paper={paper} key={index} />
 				))}
 			</div>
 

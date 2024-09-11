@@ -97,7 +97,7 @@ export default function Publications() {
 					transition={{ duration: 0.5 }}
 				>
 					{articles.map((article, index) => (
-						<Publication publication={article} index={index} />
+						<Publication publication={article} index={index} key={index} />
 					))}
 				</motion.div>
 			</div>
