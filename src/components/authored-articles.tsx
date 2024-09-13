@@ -117,7 +117,7 @@ export default function AuthoredArticles() {
 				science, and chronic disease management.
 			</motion.p>
 
-			<div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+			<div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
 				{articles.slice(0, visibleArticles).map((article, index) => (
 					<Articles article={article} index={index} key={index} />
 				))}
@@ -125,10 +125,10 @@ export default function AuthoredArticles() {
 
 			{/* Show More Button */}
 			{visibleArticles < articles.length && (
-				<div className="flex justify-center mt-5">
+				<div className="flex justify-center ">
 					<button
 						onClick={showMoreArticles}
-						className="z-30 flex items-center gap-2 text-primary underline hover:text-primary-hover"
+						className="z-30 flex items-center gap-2 text-primary underline underline-offset-4 hover:text-primary-hover"
 					>
 						<Image src="/icons/sparkles.png" alt="" width={18} height={18} />{" "}
 						Show More <ArrowRight className="w-5 h-5" />

@@ -1,64 +1,101 @@
 "use client";
-import { useState, useRef } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import Publication from "./publication";
+import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 
 export default function Publications() {
 	// All the articles
 	const articles = [
 		{
-			title: "Forbes Publications",
+			title: "Forbes",
+			year: "2020",
+			src: "/pub/forbes.png",
 			link: "https://www.forbes.com/sites/frederickdaso/2022/09/05/two-harvard-students-revolutionize-diabetes-treatment-on-a-regular-basys/",
-			src: "/pub/harvard-ai.jpg",
 			description:
-				"Basys.ai, a Harvard student-founded startup, uses AI to improve diabetes treatment by providing doctors with personalized clinical decision support.",
+				"Long-term management of metabolic and chronic diseases represents the largest cost burden on the U.S. healthcare system. Founded in June 2021, basys.ai is a B2B SaaS platform that supports clinical decision-making for doctors using deep learning algorithms. ",
 		},
 		{
 			title: "The Harvard Gazette",
+			year: "2022",
+			src: "/pub/harvard.png",
 			link: "https://news.harvard.edu/gazette/story/newsplus/transforming-public-health-through-social-innovation/",
-			src: "/pub/transforming.webp",
 			description:
-				"Amber selected as one of Cheng's fellows at Harvard Kennedy School",
+				"Amber Nigam, SM '23, co-founded the tech start-up basys.ai with Jie Sun, SM '22. The company's software tool uses artificial intelligence to track, predict, and intervene in the health of patients with diabetes. “Our goal is to impact as many people as possible,” Nigam said.",
 		},
 		{
 			title: "Harvard T.H Chan",
+			year: "2022",
+			src: "/pub/harvard-chan.png",
 			link: "https://www.hsph.harvard.edu/news/features/need-help-managing-diabetes-these-students-made-an-app-for-that/",
-			src: "/pub/need-help.webp",
-			description: "Amber's interview published by Harvard",
+			description:
+				"Amber Nigam, SM '23, aims to help people with diabetes feel as though they're living without it. As a co-founder of basys.ai, a tech startup, he developed an easy-to-use app that allows diabetes patients to track their blood glucose levels, activities, diet, and more. ",
 		},
 		{
 			title: "The Business Journals",
+			year: "2022",
+			src: "/pub/tbj.png",
 			link: "https://www.bizjournals.com/boston/inno/stories/news/2022/10/04/ai-startup-from-harvard-innovation-labs-launches.html",
-			src: "/pub/ai-startup.webp",
-			description: "Boston Business Journal covers the launch of basys.ai",
+			description:
+				"A newly launched tech company, founded by two Harvard T.H. Chan School of Public Health students, uses AI to predict and improve outcomes for patients with metabolic health diseases. Their approach aims to enhance patient care and optimize treatment strategies.",
 		},
 		{
 			title: "NASDAQ",
-			link: "https://www.nasdaq.com/articles/amber-nigam%3A-improving-metabolic-health-for-billions-through-ai",
+			year: "2022",
 			src: "/pub/nasdaq.png",
-			description: "Nasdaq publishes Amber's story and motivation for starting up",
+			link: "https://www.nasdaq.com/articles/amber-nigam%3A-improving-metabolic-health-for-billions-through-ai",
+			description:
+				"Hey, guys! It's Spiffy, and I'm back again on Planet Earth with an eye out for entrepreneurs making a difference in the world! I have another great interview for you this week. Today, I'm excited to speak with Amber Nigam, the co-founder and CEO of basys.ai. Let's see what inspiring work he's been up to.",
 		},
 		{
 			title: "MIT News",
+			year: "2020",
+			src: "/pub/mit.png",
 			link: "https://news.mit.edu/2020/what-is-covid-19-data-tsunami-telling-policymakers-0701",
-			src: "/pub/amber.webp",
-			description: "MIT News publishes Amber",
+			description:
+				"Amber Nigam, a data scientist based in New Delhi, India, has watched conspiracy theories spread and multiply on social media as contagiously as Covid-19 itself. “There's a lot of anxiety,” he says. “Even my parents have shown me news on WhatsApp and asked if it was true.”",
 		},
 		{
 			title: "NYC Daily Post",
+			year: "2022",
+			src: "/pub/nyc.png",
 			link: "https://nycdailypost.com/2022/06/16/health/amber-nigam-boston-congress-of-public-health-40-under-40-winner/",
-			src: "/pub/nyc.webp",
-			description: "Amber awarded 40 under 40 and published by NYC Daily Post",
+			description:
+				"The inaugural 40 Under 40 Public Health Catalyst Awards aim to highlight the rising leaders and innovators of the public health field. The Boston Congress of Public Health (BCPH) and the HPHR Journal selected a group of “leaders, entrepreneurs, researchers, scientists, activists”, and doctors",
 		},
 		{
 			title: "YOURSTORY",
+			year: "2022",
+			src: "/pub/yourstory.png",
 			link: "https://yourstory.com/2022/08/basys-ai-harvard-healthtech-startup-india-ayushman-bharat",
-			src: "/pub/yourstory.avif",
-			description: "YourStory covers basys.ai's India debut",
+			description:
+				"basys.ai, a healthtech startup, spun out of Harvard, is looking to launch its services in India in a few months. It uses its proprietary AI technology to track, predict and provide interventions to improve treatment outcomes for better metabolic health.",
+		},
+		{
+			title: "NASDAQ",
+			year: "2022",
+			src: "/pub/nasdaq.png",
+			link: "https://www.nasdaq.com/articles/amber-nigam%3A-improving-metabolic-health-for-billions-through-ai",
+			description:
+				"Hey, guys! It's Spiffy, and I'm back again on Planet Earth with an eye out for entrepreneurs making a difference in the world! I have another great interview for you this week. Today, I'm excited to speak with Amber Nigam, the co-founder and CEO of basys.ai. Let's see what inspiring work he's been up to.",
 		},
 	];
+
+	useEffect(() => {
+		if (carouselRef.current) {
+			const carouselWidth = carouselRef.current.scrollWidth;
+			const visibleWidth = carouselRef.current.offsetWidth;
+
+			// Calculate the center position
+			const centerPosition = (carouselWidth - visibleWidth) / 2;
+
+			// Scroll to center position
+			carouselRef.current.scrollTo({
+				left: centerPosition,
+				behavior: "smooth",
+			});
+		}
+	}, []);
 
 	const [isSliding, setIsSliding] = useState(false);
 	const carouselRef = useRef<HTMLDivElement>(null);
@@ -89,53 +126,36 @@ export default function Publications() {
 
 	return (
 		<div className="relative">
-			<div className="py-10">
+			<motion.div
+				ref={carouselRef}
+				transition={{ duration: 0.5 }}
+				className="py-10 overflow-x-scroll overflow-y-hidden hide-scrollbar scroll-smooth"
+			>
 				{/* Carousel */}
-				<motion.div
-					ref={carouselRef}
-					className="flex flex-1 gap-5 overflow-x-scroll overflow-y-hidden hide-scrollbar scroll-smooth"
-					transition={{ duration: 0.5 }}
-				>
-					{articles.map((article, index) => (
+				<div className="flex gap-5 p-5">
+					{articles.slice(0, 4).map((article, index) => (
 						<Publication publication={article} index={index} key={index} />
 					))}
-				</motion.div>
-			</div>
+				</div>
+				<div className="flex justify-center gap-5 p-5">
+					{articles.slice(4).map((article, index) => (
+						<Publication publication={article} index={index} key={index} />
+					))}
+				</div>
+			</motion.div>
 
 			{/* Left and Right buttons */}
 			<button
 				onClick={handlePrev}
-				className="absolute left-0 md:-left-10 top-1/2 transform -translate-y-1/2 p-2"
+				className="absolute left-20 top-1/2 transform -translate-y-1/2 p-2"
 			>
-				<svg
-					width="18"
-					height="60"
-					viewBox="0 0 18 60"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M0.262472 30.4799C0.0989237 30.1809 0.0989238 29.8191 0.262472 29.5201L16.1227 0.523331C16.6195 -0.385056 18 -0.0321884 18 1.0032L18 58.9968C18 60.0322 16.6195 60.3851 16.1227 59.4767L0.262472 30.4799Z"
-						fill="white"
-					/>
-				</svg>
+				<CircleChevronLeft className="w-8 h-8" />
 			</button>
 			<button
 				onClick={handleNext}
-				className="absolute right-0 md:-right-10 top-1/2 transform -translate-y-1/2 p-2"
+				className="absolute right-20 top-1/2 transform -translate-y-1/2 p-2"
 			>
-				<svg
-					width="18"
-					height="60"
-					viewBox="0 0 18 60"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M17.7375 29.5201C17.9011 29.8191 17.9011 30.1809 17.7375 30.4799L1.87734 59.4767C1.38049 60.3851 0 60.0322 0 58.9968L0 1.0032C0 -0.0321836 1.38049 -0.385057 1.87734 0.523327L17.7375 29.5201Z"
-						fill="white"
-					/>
-				</svg>
+				<CircleChevronRight className="w-8 h-8" />
 			</button>
 		</div>
 	);

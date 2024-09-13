@@ -115,7 +115,7 @@ export default function PublishedPapers() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView4 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-primary px-5 uppercase ${outfit.className}`}
+				className={`text-primary uppercase ${outfit.className}`}
 			>
 				R&D
 			</motion.p>
@@ -124,7 +124,7 @@ export default function PublishedPapers() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView4 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-4xl px-5 font-bold ${outfit.className}`}
+				className={`text-4xl font-bold ${outfit.className}`}
 			>
 				Papers Published
 			</motion.h1>
@@ -134,7 +134,7 @@ export default function PublishedPapers() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView4 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`${outfit.className} w-2/3  px-5 pb-5 text-foreground-secondary`}
+				className={`${outfit.className} w-2/3  pb-5 text-foreground-secondary`}
 			>
 				Published research papers focused on advancements in AI, health data
 				science, and chronic disease management.
@@ -147,10 +147,10 @@ export default function PublishedPapers() {
 			</div>
 
 			{visiblePapers < papers.length && (
-				<div className="flex justify-center mt-5">
+				<div className="flex justify-center">
 					<button
 						onClick={showMorePapers}
-						className="z-30 flex items-center gap-2 text-primary underline hover:text-primary-hover"
+						className="z-30 flex items-center gap-2 text-primary underline underline-offset-4 hover:text-primary-hover"
 					>
 						<Image src="/icons/sparkles.png" alt="" width={18} height={18} />{" "}
 						Show More <ArrowRight className="w-5 h-5" />

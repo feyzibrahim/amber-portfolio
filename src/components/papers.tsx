@@ -40,7 +40,7 @@ export default function Papers({ index, paper }: Props) {
 			animate={inView ? "visible" : "hidden"} // Animate only when in view
 			custom={index} // Pass the index to variants for staggered delay
 			variants={paperVariants}
-			className="rounded-md shadow-sm hover:text-primary duration-300 p-5  z-20"
+			className="rounded-md shadow-sm hover:text-primary duration-300 p-5  z-20 neumorphism"
 		>
 			<Link href={paper.link} target="_blank">
 				<h2 className="text-lg mb-2">{paper.title}</h2>
