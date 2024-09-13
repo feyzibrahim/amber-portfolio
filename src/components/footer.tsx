@@ -37,14 +37,7 @@ export default function Footer() {
 		>
 			{/* Left Column with Name, Description, and Social Links */}
 			<motion.div variants={containerVariants} className="z-10 col-span-3">
-				<motion.div variants={childVariants} className="flex items-center -ml-3">
-					<Image
-						src="/icons/logo.png"
-						alt="Amber Nigam logo"
-						width={433}
-						height={433}
-						className="w-16 h-16"
-					/>
+				<motion.div variants={childVariants} className="flex items-center">
 					<h1 className="text-3xl font-semibold text-primary">Amber Nigam</h1>
 				</motion.div>
 				<motion.p variants={childVariants} className="text-gray-400 mt-4">

@@ -40,24 +40,17 @@ export default function FirstSection() {
 			{/* Title with staggered animation */}
 			<div className="flex flex-col justify-center gap-10 z-20">
 				<motion.h1
-					className={`text-3xl md:text-5xl font-bold`}
+					className={`text-3xl md:text-5xl font-bold text-foreground`}
 					variants={childVariants}
 				>
 					Amber <span className="text-primary">Nigam</span>
 				</motion.h1>
-				<motion.p className="" variants={childVariants}>
+				<motion.p className="text-foreground" variants={childVariants}>
 					Amber Nigam is the Co-founder and CEO of Basys.ai, a digital health
 					startup optimizing healthcare workflows with AI. A Harvard graduate,
 					his work in AI and healthcare has been recognized in top conferences
 					and journals.
 				</motion.p>
-				<motion.div variants={childVariants}>
-					<Link href="mailto:amber@basys.ai">
-						<Button className="rounded-full font-bold hover:bg-primary-hover px-8 py-6 ">
-							Get In Touch
-						</Button>
-					</Link>
-				</motion.div>
 			</div>
 			{/* Image with staggered animation */}
 			<motion.div

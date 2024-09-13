@@ -28,7 +28,7 @@ export default function Home() {
 	});
 
 	return (
-		<div className="bg-background">
+		<div className="bg-background text-foreground">
 			<Navbar />
 			<FirstSection />
 
@@ -82,7 +82,7 @@ export default function Home() {
 			<div className="common-style py-12" id="articles">
 				<AuthoredArticles />
 			</div>
-			<div className="common-style py-12 relative" id="articles">
+			<div className="common-style py-12 relative" id="papers">
 				<PublishedPapers />
 			</div>
 			<Footer />

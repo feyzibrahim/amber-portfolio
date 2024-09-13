@@ -45,20 +45,8 @@ export default function Navbar() {
 		<>
 			{/* Navbar */}
 			<nav
-				className={`w-full px-5 lg:px-40 py-2 grid grid-cols-2 md:grid-cols-3 items-center absolute top-0 left-0 transition-transform duration-300 z-50 `}
+				className={`w-full px-5 lg:px-40 py-5 flex justify-between items-center absolute top-0 left-0 transition-transform duration-300 z-50 `}
 			>
-				<Link href="/">
-					<div className="flex gap-2 items-center hover:cursor-pointer animate-fadeIn">
-						<Image
-							src="/icons/logo.png"
-							alt=""
-							width={433}
-							height={433}
-							className="w-16 h-16"
-						/>
-						{/* <p className="font-bold">Amber Nigam</p> */}
-					</div>
-				</Link>
 				<div className="hidden lg:flex justify-center gap-5 animate-fadeIn ">
 					<p className="text-foreground cursor-pointer hover:text-foreground">
 						<Link href="#about">About</Link>
@@ -82,7 +70,7 @@ export default function Navbar() {
 					{/* <ModeToggle /> */}
 				</div>
 				{/* Drawer toggle button */}
-				<div className="lg:hidden flex justify-end">
+				<div className="lg:hidden flex justify-end w-full">
 					<AlignJustify onClick={toggleDrawer} className="cursor-pointer" />
 				</div>
 			</nav>
@@ -99,27 +87,33 @@ export default function Navbar() {
 					</div>
 					<nav className="flex flex-col gap-5 mt-10">
 						<Link href="#about" className="text-lg" onClick={toggleDrawer}>
-							Publications
+							About
 						</Link>
 						<Link
-							href="#experience"
+							href="#publications"
 							className="text-lg"
 							onClick={toggleDrawer}
 						>
+							Publications
+						</Link>
+						<Link href="#articles" className="text-lg" onClick={toggleDrawer}>
 							Articles
 						</Link>
-						<Link href="#contact" className="text-lg" onClick={toggleDrawer}>
-							About
+						<Link href="#papers" className="text-lg" onClick={toggleDrawer}>
+							Papers
 						</Link>
+
 						{/* <div className="flex gap-2 items-center">
 							<p>Switch Theme: </p>
 							<ModeToggle />
 						</div> */}
-						<Link href="mailto:amber@basys.ai">
-							<Button className="mt-5 w-full" onClick={toggleDrawer}>
-								Get In Touch
-							</Button>
-						</Link>
+						<div>
+							<Link href="mailto:amber@basys.ai">
+								<Button className="rounded-full font-bold hover:bg-primary-hover px-8 py-6 ">
+									Get In Touch
+								</Button>
+							</Link>
+						</div>
 					</nav>
 				</div>
 			</div>
