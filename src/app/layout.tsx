@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import "./globals.css";
-import { inter } from "./fonts/fonts";
+import { outfit } from "./fonts/fonts";
 
 export const metadata: Metadata = {
 	title: "Amber Nigam",
@@ -19,10 +19,10 @@ export default function RootLayout({
 
 	return (
 		<html lang="en">
-			<body className={`${inter.className}  antialiased`}>
+			<body className={`${outfit.className}  antialiased`}>
 				<ThemeProvider
 					attribute="class"
-					defaultTheme="system"
+					defaultTheme="dark"
 					enableSystem
 					disableTransitionOnChange
 				>

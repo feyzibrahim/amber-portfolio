@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export default function Navbar() {
 	const [isVisible, setIsVisible] = useState(true);
@@ -44,29 +45,39 @@ export default function Navbar() {
 		<>
 			{/* Navbar */}
 			<nav
-				className={`w-full px-5 lg:px-40 py-2 grid grid-cols-2 md:grid-cols-3 items-center fixed top-0 left-0 transition-transform duration-300 bg-background-secondary shadow-md z-50 ${
-					isVisible ? "translate-y-0" : "-translate-y-full"
-				}`}
+				className={`w-full px-5 lg:px-40 py-2 grid grid-cols-2 md:grid-cols-3 items-center absolute top-0 left-0 transition-transform duration-300 z-50 `}
 			>
 				<Link href="/">
 					<div className="flex gap-2 items-center hover:cursor-pointer animate-fadeIn">
-						<p className="font-bold">Amber Nigam</p>
+						<Image
+							src="/icons/logo.png"
+							alt=""
+							width={433}
+							height={433}
+							className="w-16 h-16"
+						/>
+						{/* <p className="font-bold">Amber Nigam</p> */}
 					</div>
 				</Link>
-				<div className="hidden lg:flex justify-center gap-5 text-sm animate-fadeIn ">
-					<p className="text-foreground-secondary cursor-pointer hover:text-foreground">
+				<div className="hidden lg:flex justify-center gap-5 animate-fadeIn ">
+					<p className="text-foreground cursor-pointer hover:text-foreground">
+						<Link href="#about">About</Link>
+					</p>
+					<p className="text-foreground cursor-pointer hover:text-foreground">
 						<Link href="#publications">Publications</Link>
 					</p>
-					<p className="text-foreground-secondary cursor-pointer hover:text-foreground">
+					<p className="text-foreground cursor-pointer hover:text-foreground">
 						<Link href="#articles">Articles</Link>
 					</p>
-					{/* <p className="text-foreground-secondary cursor-pointer hover:text-foreground">
-						<Link href="#about">About</Link>
-					</p> */}
+					<p className="text-foreground cursor-pointer hover:text-foreground">
+						<Link href="#papers">Papers</Link>
+					</p>
 				</div>
 				<div className="hidden md:flex justify-end gap-5">
 					<Link href="mailto:amber@basys.ai">
-						<Button>Get In Touch</Button>
+						<Button className="rounded-full font-bold hover:bg-primary-hover">
+							Get In Touch
+						</Button>
 					</Link>
 					<ModeToggle />
 				</div>

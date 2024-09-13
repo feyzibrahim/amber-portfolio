@@ -30,6 +30,7 @@ const config: Config = {
 				},
 				primary: {
 					DEFAULT: "hsl(var(--primary))",
+					hover: "hsl(var(--primary-hover))",
 					foreground: "hsl(var(--primary-foreground))",
 				},
 				secondary: {
@@ -77,6 +78,9 @@ const config: Config = {
 					"0%": { transform: "translateX(100%)" },
 					"100%": { transform: "translateX(0%)" },
 				},
+			},
+			backgroundImage: {
+				"radial-gradient": "radial-gradient(circle, var(--tw-gradient-stops))",
 			},
 		},
 	},

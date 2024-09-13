@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
+import { Button } from "./ui/button";
 
 export default function FirstSection() {
 	// useInView for scroll-triggered animation
@@ -33,40 +35,60 @@ export default function FirstSection() {
 			variants={containerVariants}
 			initial="hidden"
 			animate={inView1 ? "visible" : "hidden"} // Only animate when in view
-			className="common-style flex flex-col gap-8 items-center text-center border-b"
+			className="common-style relative grid grid-cols-1 md:grid-cols-2 gap-5"
 		>
-			<div className="absolute top-0 w-full bg-background-secondary h-1/2 -z-10"></div>
-
 			{/* Title with staggered animation */}
-			<motion.h1
-				className={`text-3xl md:text-5xl font-bold`}
-				variants={childVariants}
-			>
-				Amber Nigam
-			</motion.h1>
-
+			<div className="flex flex-col justify-center gap-10 z-20">
+				<motion.h1
+					className={`text-3xl md:text-5xl font-bold`}
+					variants={childVariants}
+				>
+					Amber <span className="text-primary">Nigam</span>
+				</motion.h1>
+				<motion.p className="" variants={childVariants}>
+					Amber Nigam is the Co-founder and CEO of Basys.ai, a digital health
+					startup optimizing healthcare workflows with AI. A Harvard graduate,
+					his work in AI and healthcare has been recognized in top conferences
+					and journals.
+				</motion.p>
+				<motion.div variants={childVariants}>
+					<Link href="mailto:amber@basys.ai">
+						<Button className="rounded-full font-bold hover:bg-primary-hover px-8 py-6 ">
+							Get In Touch
+						</Button>
+					</Link>
+				</motion.div>
+			</div>
 			{/* Image with staggered animation */}
-			<motion.div variants={childVariants} className="md:w-3/12">
+			<motion.div
+				variants={childVariants}
+				className=" flex items-center justify-center"
+			>
 				<Image
-					className=" shadow-lg"
 					src="/amber.png"
 					alt="Amber Nigam"
 					width={403}
 					height={448}
 					priority
+					className="z-10"
 				/>
 			</motion.div>
+			<Image
+				src="/circle/light1.png"
+				alt=""
+				width={843}
+				height={964}
+				className="absolute top-0 right-0 z-0"
+			/>
+			<Image
+				src="/circle/light2.png"
+				alt=""
+				width={843}
+				height={964}
+				className="absolute top-0 -left-0 z-10"
+			/>
 
 			{/* Paragraph with staggered animation */}
-			<motion.p
-				className="md:w-2/3 leading-relaxed tracking-wide"
-				variants={childVariants}
-			>
-				Amber Nigam is the Co-founder and CEO of Basys.ai, a digital health
-				startup optimizing healthcare workflows with AI. A Harvard graduate, his
-				work in AI and healthcare has been recognized in top conferences and
-				journals.
-			</motion.p>
 		</motion.div>
 	);
 }
