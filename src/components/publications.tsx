@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Publication from "./publication";
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Publications() {
 	// All the articles
@@ -125,38 +126,69 @@ export default function Publications() {
 	};
 
 	return (
-		<div className="relative">
-			<motion.div
-				ref={carouselRef}
-				transition={{ duration: 0.5 }}
-				className="py-10 overflow-x-scroll overflow-y-hidden hide-scrollbar scroll-smooth"
-			>
-				{/* Carousel */}
-				<div className="flex gap-5 p-5">
-					{articles.slice(0, 4).map((article, index) => (
-						<Publication publication={article} index={index} key={index} />
-					))}
-				</div>
-				<div className="flex justify-center gap-5 p-5">
-					{articles.slice(4).map((article, index) => (
-						<Publication publication={article} index={index} key={index} />
-					))}
-				</div>
-			</motion.div>
+		<div>
+			<div className="relative">
+				<motion.div
+					ref={carouselRef}
+					transition={{ duration: 0.5 }}
+					className="py-10 overflow-x-scroll overflow-y-hidden hide-scrollbar scroll-smooth"
+				>
+					{/* Carousel */}
+					<div className="flex gap-5 p-5">
+						{articles.slice(0, 4).map((article, index) => (
+							<Publication
+								publication={article}
+								index={index}
+								key={index}
+							/>
+						))}
+					</div>
+					<div className="flex justify-center gap-5 p-5">
+						{articles.slice(4).map((article, index) => (
+							<Publication
+								publication={article}
+								index={index}
+								key={index}
+							/>
+						))}
+					</div>
+				</motion.div>
 
-			{/* Left and Right buttons */}
-			<button
-				onClick={handlePrev}
-				className="absolute left-20 top-1/2 transform -translate-y-1/2 p-2"
-			>
-				<CircleChevronLeft className="w-8 h-8" />
-			</button>
-			<button
-				onClick={handleNext}
-				className="absolute right-20 top-1/2 transform -translate-y-1/2 p-2"
-			>
-				<CircleChevronRight className="w-8 h-8" />
-			</button>
+				{/* Left and Right buttons */}
+				<button
+					onClick={handlePrev}
+					className="absolute left-5 md:left-20 top-1/2 transform -translate-y-1/2 p-2"
+				>
+					<CircleChevronLeft className="w-8 h-8" />
+				</button>
+				<button
+					onClick={handleNext}
+					className="absolute right-5 md:right-20 top-1/2 transform -translate-y-1/2 p-2"
+				>
+					<CircleChevronRight className="w-8 h-8" />
+				</button>
+			</div>
+			<Image
+				src="/circle/light4.png"
+				alt=""
+				width={843}
+				height={964}
+				className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+			/>
+			<Image
+				src="/circle/light5.png"
+				alt=""
+				width={843}
+				height={964}
+				className="absolute bottom-0 right-0 z-0"
+			/>
+			<Image
+				src="/circle/light6.png"
+				alt=""
+				width={843}
+				height={964}
+				className="absolute top-0 left-0 z-0"
+			/>
 		</div>
 	);
 }

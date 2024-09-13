@@ -111,7 +111,7 @@ export default function AuthoredArticles() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-center ${outfit.className} w-2/3 mx-auto text-foreground-secondary`}
+				className={`text-center ${outfit.className} md:w-2/3 mx-auto text-foreground-secondary`}
 			>
 				Authored insightful articles on AI-driven healthcare innovations, data
 				science, and chronic disease management.

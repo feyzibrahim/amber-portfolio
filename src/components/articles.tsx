@@ -43,7 +43,7 @@ export default function Articles({ index, article }: Props) {
 					alt=""
 					width={958}
 					height={541}
-					className="rounded-md h-32 w-full object-cover"
+					className="rounded-md md:h-32 w-full object-cover"
 				/>
 				<p>{article.title}</p>
 			</Link>

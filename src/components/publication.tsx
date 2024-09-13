@@ -42,7 +42,7 @@ export default function Publication({ index, publication }: Props) {
 			animate={inView ? "visible" : "hidden"} // Animate only when in view
 			custom={index} // Pass the index to variants for staggered delay
 			variants={publicationVariants}
-			className="neumorphism rounded-md w-96 flex-shrink-0 flex flex-col justify-between p-5"
+			className="neumorphism rounded-md w-96 flex-shrink-0 flex flex-col justify-between p-5 z-10"
 		>
 			<p className="pt-2 font-light pb-2 text-foreground-secondary">
 				{publication.description}
