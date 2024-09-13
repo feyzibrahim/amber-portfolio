@@ -25,14 +25,6 @@ export default function Home() {
 		threshold: 0.5,
 		triggerOnce: true,
 	});
-	const { ref: ref3, inView: inView3 } = useInView({
-		threshold: 0.1,
-		triggerOnce: true,
-	});
-	const { ref: ref4, inView: inView4 } = useInView({
-		threshold: 0.1,
-		triggerOnce: true,
-	});
 
 	return (
 		<div className="bg-background">
@@ -132,27 +124,9 @@ export default function Home() {
 			</div>
 
 			<div className="common-style py-12" id="articles">
-				<motion.h1
-					ref={ref3}
-					initial={{ opacity: 0, y: 20 }}
-					animate={inView3 ? { opacity: 1, y: 0 } : {}}
-					transition={{ duration: 0.8 }}
-					className={`text-4xl font-bold text-center ${outfit.className}`}
-				>
-					Authored Articles
-				</motion.h1>
 				<AuthoredArticles />
 			</div>
-			<div className="common-style py-12" id="articles">
-				<motion.h1
-					ref={ref4}
-					initial={{ opacity: 0, y: 100 }}
-					animate={inView4 ? { opacity: 1, y: 0 } : {}}
-					transition={{ duration: 0.8 }}
-					className={`text-4xl font-bold text-center ${outfit.className}`}
-				>
-					Papers Published
-				</motion.h1>
+			<div className="common-style py-12 relative" id="articles">
 				<PublishedPapers />
 			</div>
 			<Footer />

@@ -1,7 +1,11 @@
 "use client";
+import { outfit } from "@/app/fonts/fonts";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 import Papers from "./papers";
-import { Button } from "./ui/button";
 
 export default function PublishedPapers() {
 	const papers = [
@@ -99,9 +103,44 @@ export default function PublishedPapers() {
 		setVisiblePapers((prev) => prev + 6); // Show 6 more papers when clicked
 	};
 
+	const { ref: ref4, inView: inView4 } = useInView({
+		threshold: 0.1,
+		triggerOnce: true,
+	});
+
 	return (
-		<div className="py-10">
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+		<div className="py-10  space-y-3">
+			<motion.p
+				ref={ref4}
+				initial={{ opacity: 0, y: 20 }}
+				animate={inView4 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className={`text-primary px-5 uppercase ${outfit.className}`}
+			>
+				R&D
+			</motion.p>
+			<motion.h1
+				ref={ref4}
+				initial={{ opacity: 0, y: 20 }}
+				animate={inView4 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className={`text-4xl px-5 font-bold ${outfit.className}`}
+			>
+				Papers Published
+			</motion.h1>
+
+			<motion.p
+				ref={ref4}
+				initial={{ opacity: 0, y: 20 }}
+				animate={inView4 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className={`${outfit.className} w-2/3  px-5 pb-5 text-foreground-secondary`}
+			>
+				Published research papers focused on advancements in AI, health data
+				science, and chronic disease management.
+			</motion.p>
+
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 				{papers.slice(0, visiblePapers).map((paper, index) => (
 					<Papers index={index} paper={paper} key={index} />
 				))}
@@ -109,9 +148,29 @@ export default function PublishedPapers() {
 
 			{visiblePapers < papers.length && (
 				<div className="flex justify-center mt-5">
-					<Button onClick={showMorePapers}>Show More</Button>
+					<button
+						onClick={showMorePapers}
+						className="z-30 flex items-center gap-2 text-primary underline hover:text-primary-hover"
+					>
+						<Image src="/icons/sparkles.png" alt="" width={18} height={18} />{" "}
+						Show More <ArrowRight className="w-5 h-5" />
+					</button>
 				</div>
 			)}
+			<Image
+				src="/circle/light7.png"
+				alt=""
+				width={843}
+				height={964}
+				className="absolute -bottom-52 right-0 z-0"
+			/>
+			<Image
+				src="/circle/light6.png"
+				alt=""
+				width={843}
+				height={964}
+				className="absolute -top-96 left-0 z-0"
+			/>
 		</div>
 	);
 }

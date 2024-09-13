@@ -15,7 +15,7 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	const theme = cookies().get("__theme__")?.value || "system";
+	const theme = cookies().get("__theme__")?.value || "dark";
 
 	return (
 		<html lang="en">

@@ -2,6 +2,11 @@
 import { useState } from "react";
 import Articles from "./articles";
 import { Button } from "./ui/button";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { outfit } from "@/app/fonts/fonts";
+import { ArrowRight, MoveRight, Sparkle, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 export default function AuthoredArticles() {
 	// All the articles
@@ -68,16 +73,51 @@ export default function AuthoredArticles() {
 		},
 	];
 
-	const [visibleArticles, setVisibleArticles] = useState(6); // Initially show 6 articles
+	const [visibleArticles, setVisibleArticles] = useState(8); // Initially show 8 articles
 
 	// Function to load more articles
 	const showMoreArticles = () => {
-		setVisibleArticles((prev) => prev + 6); // Show 6 more articles
+		setVisibleArticles((prev) => prev + 8); // Show 8 more articles
 	};
 
+	const { ref: ref3, inView: inView3 } = useInView({
+		threshold: 0.1,
+		triggerOnce: true,
+	});
+
 	return (
-		<div className="py-10">
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+		<div className="py-10 space-y-3">
+			<motion.p
+				ref={ref3}
+				initial={{ opacity: 0, y: 20 }}
+				animate={inView3 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className={`text-primary uppercase text-center ${outfit.className}`}
+			>
+				Authored
+			</motion.p>
+			<motion.h1
+				ref={ref3}
+				initial={{ opacity: 0, y: 20 }}
+				animate={inView3 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className={`text-4xl font-bold text-center ${outfit.className}`}
+			>
+				Articles
+			</motion.h1>
+
+			<motion.p
+				ref={ref3}
+				initial={{ opacity: 0, y: 20 }}
+				animate={inView3 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className={`text-center ${outfit.className} w-2/3 mx-auto text-foreground-secondary`}
+			>
+				Authored insightful articles on AI-driven healthcare innovations, data
+				science, and chronic disease management.
+			</motion.p>
+
+			<div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 				{articles.slice(0, visibleArticles).map((article, index) => (
 					<Articles article={article} index={index} key={index} />
 				))}
@@ -86,7 +126,13 @@ export default function AuthoredArticles() {
 			{/* Show More Button */}
 			{visibleArticles < articles.length && (
 				<div className="flex justify-center mt-5">
-					<Button onClick={showMoreArticles}>Show More</Button>
+					<button
+						onClick={showMoreArticles}
+						className="z-30 flex items-center gap-2 text-primary underline hover:text-primary-hover"
+					>
+						<Image src="/icons/sparkles.png" alt="" width={18} height={18} />{" "}
+						Show More <ArrowRight className="w-5 h-5" />
+					</button>
 				</div>
 			)}
 		</div>
