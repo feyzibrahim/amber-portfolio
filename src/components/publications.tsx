@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Publication from "./publication";
-import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
+import { ArrowRight, CircleChevronLeft, CircleChevronRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Publications() {
@@ -125,9 +125,16 @@ export default function Publications() {
 		}
 	};
 
+	const [visibleArticles, setVisibleArticles] = useState(4); // Initially show 4 articles
+
+	// Function to load more articles
+	const showMoreArticles = () => {
+		setVisibleArticles((prev) => prev + 4); // Show 4 more articles
+	};
+
 	return (
 		<div>
-			<div className="relative">
+			<div className="relative hidden md:block">
 				<motion.div
 					ref={carouselRef}
 					transition={{ duration: 0.5 }}
@@ -157,17 +164,45 @@ export default function Publications() {
 				{/* Left and Right buttons */}
 				<button
 					onClick={handlePrev}
-					className="absolute left-5 md:left-20 top-1/2 transform -translate-y-1/2 p-2"
+					className="absolute left-5 md:left-20 top-1/2 transform -translate-y-1/2 p-2 z-20"
 				>
 					<CircleChevronLeft className="w-8 h-8" />
 				</button>
 				<button
 					onClick={handleNext}
-					className="absolute right-5 md:right-20 top-1/2 transform -translate-y-1/2 p-2"
+					className="absolute right-5 md:right-20 top-1/2 transform -translate-y-1/2 p-2 z-20"
 				>
 					<CircleChevronRight className="w-8 h-8" />
 				</button>
 			</div>
+			<motion.div
+				ref={carouselRef}
+				transition={{ duration: 0.5 }}
+				className="py-10 md:hidden"
+			>
+				{/* Carousel */}
+				<div className="px-5 space-y-5">
+					{articles.slice(0, visibleArticles).map((article, index) => (
+						<Publication publication={article} index={index} key={index} />
+					))}
+				</div>
+				{visibleArticles < articles.length && (
+					<div className="flex justify-center mt-10">
+						<button
+							onClick={showMoreArticles}
+							className="z-30 flex items-center gap-2 text-primary underline underline-offset-4 hover:text-primary-hover"
+						>
+							<Image
+								src="/icons/sparkles.png"
+								alt=""
+								width={18}
+								height={18}
+							/>{" "}
+							Show More <ArrowRight className="w-5 h-5" />
+						</button>
+					</div>
+				)}
+			</motion.div>
 			<Image
 				src="/circle/light4.png"
 				alt=""

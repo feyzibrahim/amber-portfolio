@@ -42,9 +42,9 @@ export default function Publication({ index, publication }: Props) {
 			animate={inView ? "visible" : "hidden"} // Animate only when in view
 			custom={index} // Pass the index to variants for staggered delay
 			variants={publicationVariants}
-			className="neumorphism rounded-md w-96 flex-shrink-0 flex flex-col justify-between p-5 z-10"
+			className="neumorphism rounded-md md:w-96 md:flex-shrink-0 flex flex-col justify-between p-5 z-10"
 		>
-			<p className="pt-2 font-light pb-2 text-foreground-secondary">
+			<p className="pt-2 font-light pb-2 text-foreground-secondary text-sm md:text-base">
 				{publication.description}
 			</p>
 			<div className="border-t pt-2 flex justify-between">
@@ -54,10 +54,10 @@ export default function Publication({ index, publication }: Props) {
 						alt=""
 						width={60}
 						height={60}
-						className="h-12 w-12"
+						className="h-8 w-8 md:h-12 md:w-12"
 					/>
 					<div>
-						<h1 className="font-bold">{publication.title}</h1>
+						<h1 className="font-bold line-clamp-1">{publication.title}</h1>
 						<p className="text-xs text-foreground-secondary">
 							{publication.year}
 						</p>
