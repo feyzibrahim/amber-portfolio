@@ -82,6 +82,10 @@ export default function Publications() {
 		},
 	];
 
+	const [isSliding, setIsSliding] = useState(false);
+	const carouselRef = useRef<HTMLDivElement>(null);
+	const carouselRef2 = useRef<HTMLDivElement>(null);
+
 	useEffect(() => {
 		if (carouselRef.current) {
 			const carouselWidth = carouselRef.current.scrollWidth;
@@ -97,9 +101,6 @@ export default function Publications() {
 			});
 		}
 	}, []);
-
-	const [isSliding, setIsSliding] = useState(false);
-	const carouselRef = useRef<HTMLDivElement>(null);
 
 	// Function to handle scroll to the next section
 	const handleNext = () => {
@@ -164,19 +165,19 @@ export default function Publications() {
 				{/* Left and Right buttons */}
 				<button
 					onClick={handlePrev}
-					className="absolute left-5 md:left-20 top-1/2 transform -translate-y-1/2 p-2 z-20"
+					className="absolute left-5 md:left-20 top-1/2 transform -translate-y-1/2 p-2 z-30"
 				>
 					<CircleChevronLeft className="w-8 h-8" />
 				</button>
 				<button
 					onClick={handleNext}
-					className="absolute right-5 md:right-20 top-1/2 transform -translate-y-1/2 p-2 z-20"
+					className="absolute right-5 md:right-20 top-1/2 transform -translate-y-1/2 p-2 z-30"
 				>
 					<CircleChevronRight className="w-8 h-8" />
 				</button>
 			</div>
 			<motion.div
-				ref={carouselRef}
+				ref={carouselRef2}
 				transition={{ duration: 0.5 }}
 				className="py-10 md:hidden"
 			>
