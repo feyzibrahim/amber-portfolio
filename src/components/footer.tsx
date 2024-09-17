@@ -66,9 +66,7 @@ export default function Footer() {
 					<input
 						type="text"
 						placeholder="Enter your email"
-						className={`p-4 border border-primary w-full rounded-md focus:outline-none ${
-							isFocused ? "bg-white text-black" : "bg-transparent"
-						} pr-10 z-10`}
+						className={`p-4 border border-primary w-[80%] bg-transparent rounded-md focus:outline-none pr-10 z-10`}
 						autoComplete="off"
 						onFocus={() => setIsFocused(true)}
 						onBlur={() => setIsFocused(false)}
@@ -76,9 +74,7 @@ export default function Footer() {
 					{/* Right arrow inside the input */}
 					<Link
 						href="mailto:amber@basys.ai"
-						className={`absolute inset-y-0 right-4 flex items-center z-40 hover:text-primary cursor-pointer ${
-							isFocused ? "text-black" : "text-current"
-						}`}
+						className={`absolute inset-y-0 right-4 flex items-center z-40 bg-primary px-5 text-black hover:text-white cursor-pointer`}
 					>
 						<MoveRight />
 					</Link>
