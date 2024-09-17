@@ -88,8 +88,8 @@ export default function Video({ index, article }: Props) {
 					</div>
 				)}
 
-				<h1 className="font-bold mt-2">{article.loc}</h1>
-				<p className="text-sm font-light">{article.title}</p>
+				<h1 className="font-bold mt-2 px-5">{article.loc}</h1>
+				<p className="text-sm font-light px-5 pb-5">{article.title}</p>
 			</motion.div>
 
 			{/* Modal for enlarged video */}
