@@ -46,7 +46,7 @@ export default function FirstSection() {
 					Amber <span className="text-primary">Nigam</span>
 				</motion.h1>
 				<motion.p className="text-foreground" variants={childVariants}>
-					Amber Nigam is the Co-founder and CEO of Basys.ai, a digital health
+					Amber Nigam is the co-founder and CEO of Basys.ai, a digital health
 					startup optimizing healthcare workflows with AI. A Harvard graduate,
 					his work in AI and healthcare has been recognized in top conferences
 					and journals.

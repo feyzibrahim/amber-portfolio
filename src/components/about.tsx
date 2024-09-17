@@ -68,15 +68,15 @@ export default function AboutSection() {
 				</motion.p>
 
 				<motion.h1 variants={childVariants} className="text-3xl font-bold">
-					CEO and founder of <span className="text-primary">basys.ai</span>
+					CEO and co-founder of <span className="text-primary">basys.ai</span>
 				</motion.h1>
 
 				<motion.p variants={childVariants} className="text-foreground-secondary">
 					With over 14 years of experience in healthcare, artificial
-					intelligence, and entrepreneurship, he brings a deep expertise in
-					leveraging cutting-edge technologies to drive innovation. He holds a
-					Bachelor's degree in Computer Science and a Master's in Health Data
-					Science from Harvard University.
+					intelligence, and entrepreneurship, Amber Nigam brings a deep
+					expertise in leveraging cutting-edge technologies to drive innovation.
+					He holds a Bachelor's degree in Computer Science and a Master's in
+					Health Data Science from Harvard University.
 				</motion.p>
 
 				<motion.p variants={childVariants} className="text-foreground-secondary">

@@ -1,10 +1,14 @@
+"use client";
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, MoveRight, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 export default function Footer() {
+	const [isFocused, setIsFocused] = useState(false);
+
 	const { ref, inView } = useInView({
 		triggerOnce: true,
 		threshold: 0.1,
@@ -62,12 +66,19 @@ export default function Footer() {
 					<input
 						type="text"
 						placeholder="Enter your email"
-						className="p-4 border border-primary w-full rounded-md focus:outline-none bg-transparent pr-10 z-10"
+						className={`p-4 border border-primary w-full rounded-md focus:outline-none ${
+							isFocused ? "bg-white text-black" : "bg-transparent"
+						} pr-10 z-10`}
+						autoComplete="off"
+						onFocus={() => setIsFocused(true)}
+						onBlur={() => setIsFocused(false)}
 					/>
 					{/* Right arrow inside the input */}
 					<Link
 						href="mailto:amber@basys.ai"
-						className="absolute inset-y-0 right-4 flex items-center z-40 hover:text-primary cursor-pointer"
+						className={`absolute inset-y-0 right-4 flex items-center z-40 hover:text-primary cursor-pointer ${
+							isFocused ? "text-black" : "text-current"
+						}`}
 					>
 						<MoveRight />
 					</Link>
