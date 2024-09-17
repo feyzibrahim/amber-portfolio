@@ -72,7 +72,7 @@ export default function Video({ index, article }: Props) {
 						/>
 						{/* Play button for podcast */}
 						<div className="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-40 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-							<button className="p-3 rounded-full text-white">
+							<button className="p-3 rounded-full mt-14 text-white">
 								<CirclePlay className="w-10 h-10" />
 							</button>
 						</div>
@@ -81,7 +81,7 @@ export default function Video({ index, article }: Props) {
 
 				{/* Play button for non-podcast */}
 				{article.type !== "Podcast" && (
-					<div className="absolute inset-0 -top-16 flex items-center justify-center opacity-0 bg-black bg-opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+					<div className="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-40 group-hover:opacity-100 transition-opacity duration-300">
 						<button className="p-3 rounded-full text-white">
 							<CirclePlay className="w-10 h-10" />
 						</button>
