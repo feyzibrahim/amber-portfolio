@@ -134,7 +134,7 @@ export default function PublishedPapers() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView4 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`${outfit.className} w-2/3  pb-5 text-foreground-secondary`}
+				className={`${outfit.className} md:w-2/3  pb-5 text-foreground-secondary`}
 			>
 				Published research papers focused on advancements in AI, health data
 				science, and chronic disease management.
