@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Dialog, DialogContent } from "./ui/dialog";
 import Image from "next/image";
 import Link from "next/link";
+import { CirclePlay } from "lucide-react";
 
 interface Props {
 	index: number;
@@ -46,19 +47,10 @@ export default function Video({ index, article }: Props) {
 				animate={inView ? "visible" : "hidden"}
 				custom={index}
 				variants={articleVariants}
-				className="z-30 hover:text-primary duration-300 cursor-pointer shadow-md"
+				className="relative z-30 hover:text-primary duration-300 cursor-pointer shadow-md group"
 				onClick={() => article.type !== "Podcast" && setModalOpen(true)} // Open modal on click
 			>
-				{/* {article.type === "YouTube" && (
-					<iframe src={article.src} className="w-full h-full rounded"></iframe>
-				)}
-
-				{article.type === "Uploaded" && (
-					<video className="rounded">
-						<source src={article.src} type="video/mp4" />
-					</video>
-				)} */}
-
+				{/* Conditional rendering based on article type */}
 				{article.type !== "Podcast" && article.img && (
 					<Image
 						src={article.img}
@@ -70,7 +62,7 @@ export default function Video({ index, article }: Props) {
 				)}
 
 				{article.type === "Podcast" && article.img && (
-					<Link href={article.src} target="_blank">
+					<Link href={article.src} target="_blank" className="relative block">
 						<Image
 							src={article.img}
 							alt=""
@@ -78,8 +70,24 @@ export default function Video({ index, article }: Props) {
 							height={541}
 							className="rounded md:h-48 w-full object-cover"
 						/>
+						{/* Play button for podcast */}
+						<div className="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-40 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+							<button className="p-3 rounded-full text-white">
+								<CirclePlay className="w-10 h-10" />
+							</button>
+						</div>
 					</Link>
 				)}
+
+				{/* Play button for non-podcast */}
+				{article.type !== "Podcast" && (
+					<div className="absolute inset-0 -top-16 flex items-center justify-center opacity-0 bg-black bg-opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+						<button className="p-3 rounded-full text-white">
+							<CirclePlay className="w-10 h-10" />
+						</button>
+					</div>
+				)}
+
 				<h1 className="font-bold mt-2">{article.loc}</h1>
 				<p className="text-sm font-light">{article.title}</p>
 			</motion.div>
