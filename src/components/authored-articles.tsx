@@ -85,7 +85,7 @@ export default function AuthoredArticles() {
 	});
 
 	return (
-		<div className="py-10 space-y-3">
+		<div className=" md:py-10 space-y-3">
 			<motion.p
 				ref={ref3}
 				initial={{ opacity: 0, y: 20 }}

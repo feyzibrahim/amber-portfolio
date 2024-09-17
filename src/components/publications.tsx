@@ -94,30 +94,6 @@ export default function Publications() {
 		}
 	}, []);
 
-	// Function to handle scroll to the next section
-	const handleNext = () => {
-		if (carouselRef.current && !isSliding) {
-			setIsSliding(true);
-			carouselRef.current.scrollBy({
-				left: carouselRef.current.offsetWidth,
-				behavior: "smooth",
-			});
-			setTimeout(() => setIsSliding(false), 500); // Delay to match scroll time
-		}
-	};
-
-	// Function to handle scroll to the previous section
-	const handlePrev = () => {
-		if (carouselRef.current && !isSliding) {
-			setIsSliding(true);
-			carouselRef.current.scrollBy({
-				left: -carouselRef.current.offsetWidth,
-				behavior: "smooth",
-			});
-			setTimeout(() => setIsSliding(false), 500);
-		}
-	};
-
 	const [visibleArticles, setVisibleArticles] = useState(6); // Initially show 6 articles
 
 	// Function to load more articles
@@ -130,7 +106,7 @@ export default function Publications() {
 			<motion.div
 				ref={carouselRef2}
 				transition={{ duration: 0.5 }}
-				className="py-10"
+				className=" md:py-10"
 			>
 				{/* Carousel */}
 				<div className="px-5 md:px-40 grid grid-cols-1 md:grid-cols-3 gap-5">

@@ -78,10 +78,10 @@ export default function Home() {
 			<div className="common-style py-12" id="articles">
 				<AuthoredArticles />
 			</div>
-			<div className="common-style py-12 relative" id="papers">
+			<div className="common-style md:py-12 relative" id="papers">
 				<PublishedPapers />
 			</div>
-			<div className="common-style py-12 relative" id="featured">
+			<div className="common-style md:py-12 relative" id="featured">
 				<FeaturedVideos />
 			</div>
 			<Footer />
