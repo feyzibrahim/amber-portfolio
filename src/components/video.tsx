@@ -94,7 +94,7 @@ export default function Video({ index, article }: Props) {
 
 			{/* Modal for enlarged video */}
 			<Dialog open={isModalOpen} onOpenChange={setModalOpen}>
-				<DialogContent className="bg-background-secondary border-none p-10 max-w-[70%]">
+				<DialogContent className="bg-background-secondary border-none md:p-10 md:max-w-[70%]">
 					<div className="relative">
 						{article.type === "YouTube" ? (
 							<iframe
