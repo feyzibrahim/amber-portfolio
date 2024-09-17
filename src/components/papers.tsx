@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
@@ -32,6 +33,8 @@ export default function Papers({ index, paper }: Props) {
 		}),
 	};
 
+	const { theme } = useTheme();
+
 	return (
 		<motion.div
 			ref={ref} // Each paper has its own observer
@@ -40,7 +43,9 @@ export default function Papers({ index, paper }: Props) {
 			animate={inView ? "visible" : "hidden"} // Animate only when in view
 			custom={index} // Pass the index to variants for staggered delay
 			variants={paperVariants}
-			className="rounded-md shadow-sm hover:text-primary duration-300 p-5  z-20 neumorphism"
+			className={`rounded-md shadow-sm hover:text-primary duration-300 p-5  z-20 ${
+				theme === "dark" ? "neumorphism" : "border shadow-xl"
+			}`}
 		>
 			<Link href={paper.link} target="_blank">
 				<h2 className="text-lg mb-2">{paper.title}</h2>

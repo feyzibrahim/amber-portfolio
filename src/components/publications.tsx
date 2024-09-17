@@ -209,21 +209,21 @@ export default function Publications() {
 				alt=""
 				width={843}
 				height={964}
-				className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+				className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hide-on-light-mode"
 			/>
 			<Image
 				src="/circle/light5.png"
 				alt=""
 				width={843}
 				height={964}
-				className="absolute bottom-0 right-0 z-0"
+				className="absolute bottom-0 right-0 z-0 hide-on-light-mode"
 			/>
 			<Image
 				src="/circle/light6.png"
 				alt=""
 				width={843}
 				height={964}
-				className="absolute top-0 left-0 z-0"
+				className="absolute top-0 left-0 z-0 hide-on-light-mode"
 			/>
 		</div>
 	);

@@ -101,7 +101,7 @@ export default function AboutSection() {
 				alt=""
 				width={843}
 				height={964}
-				className="absolute md:left-10 -top-20 md:top-1/3 transform md:-translate-y-1/2 z-0"
+				className="absolute md:left-10 -top-20 md:top-1/3 transform md:-translate-y-1/2 z-0 hide-on-light-mode"
 			/>
 		</motion.div>
 	);

@@ -67,7 +67,7 @@ export default function Navbar() {
 							Get In Touch
 						</Button>
 					</Link>
-					{/* <ModeToggle /> */}
+					<ModeToggle />
 				</div>
 				{/* Drawer toggle button */}
 				<div className="lg:hidden flex justify-end w-full">
@@ -103,10 +103,10 @@ export default function Navbar() {
 							Papers
 						</Link>
 
-						{/* <div className="flex gap-2 items-center">
+						<div className="flex gap-2 items-center">
 							<p>Switch Theme: </p>
 							<ModeToggle />
-						</div> */}
+						</div>
 						<div>
 							<Link href="mailto:amber@basys.ai">
 								<Button className="rounded-full font-bold hover:bg-primary-hover px-8 py-6 ">

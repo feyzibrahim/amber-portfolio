@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
@@ -34,6 +35,8 @@ export default function Publication({ index, publication }: Props) {
 		}),
 	};
 
+	const { theme } = useTheme();
+
 	return (
 		<motion.div
 			ref={ref} // Each publication has its own observer
@@ -42,7 +45,9 @@ export default function Publication({ index, publication }: Props) {
 			animate={inView ? "visible" : "hidden"} // Animate only when in view
 			custom={index} // Pass the index to variants for staggered delay
 			variants={publicationVariants}
-			className="neumorphism rounded-md md:w-96 md:flex-shrink-0 flex flex-col justify-between p-5 z-10"
+			className={`${
+				theme === "dark" ? "neumorphism" : "border shadow-xl"
+			} rounded-md md:w-96 md:flex-shrink-0 flex flex-col justify-between p-5 z-10`}
 		>
 			<p className="pt-2 font-light pb-2 text-foreground-secondary text-sm md:text-base">
 				{publication.description}

@@ -15,8 +15,6 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	const theme = cookies().get("__theme__")?.value || "dark";
-
 	return (
 		<html lang="en">
 			<body className={`${outfit.className}  antialiased`}>

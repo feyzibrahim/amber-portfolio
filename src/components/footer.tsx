@@ -168,7 +168,7 @@ export default function Footer() {
 				alt=""
 				width={843}
 				height={964}
-				className="absolute bottom-0 left-0 z-0"
+				className="absolute bottom-0 left-0 z-0 hide-on-light-mode"
 			/>
 			<Image
 				src="/circle/circles.png"
