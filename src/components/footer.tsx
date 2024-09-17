@@ -36,7 +36,7 @@ export default function Footer() {
 			className="common-padding grid grid-cols-1 md:grid-cols-6 gap-8 p-8 border-t relative"
 		>
 			{/* Left Column with Name, Description, and Social Links */}
-			<motion.div variants={containerVariants} className="z-10 col-span-3">
+			<motion.div variants={containerVariants} className="z-10 md:col-span-3">
 				<motion.div variants={childVariants} className="flex items-center">
 					<h1 className="text-3xl font-semibold ">
 						Amber <span className="text-primary">Nigam</span>

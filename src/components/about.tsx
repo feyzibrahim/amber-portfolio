@@ -124,12 +124,10 @@ export default function AboutSection() {
 						</DialogTrigger>
 						<DialogContent className="rounded border-none bg-background-secondary">
 							<DialogHeader>
-								<DialogTitle className="text-white">
-									Amber Nigam
-								</DialogTitle>
+								<DialogTitle>Amber Nigam</DialogTitle>
 								<DialogDescription>
 									<ScrollArea className="w-full h-96">
-										<div className="pr-2 space-y-3">
+										<div className="pr-2 space-y-3 text-foreground font-light">
 											<p>
 												Amber Nigam, with over a dozen years of
 												experience in healthcare and AI, is the
