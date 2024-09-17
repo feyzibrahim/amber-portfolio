@@ -106,7 +106,7 @@ export default function Publications() {
 			<motion.div
 				ref={carouselRef2}
 				transition={{ duration: 0.5 }}
-				className=" md:py-10"
+				className="pt-5 md:py-10"
 			>
 				{/* Carousel */}
 				<div className="px-5 md:px-40 grid grid-cols-1 md:grid-cols-3 gap-5">
