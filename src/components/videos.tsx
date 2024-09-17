@@ -33,7 +33,7 @@ export default function FeaturedVideos() {
 		{
 			src: "https://podcasts.apple.com/us/podcast/bringing-artificial-intelligence-into-prior-authorization/id1485735357?i=1000669672537",
 			type: "Podcast",
-			img: "/podcast/stratgy.avif",
+			img: "/podcast/stratgy.webp",
 		},
 		{
 			src: "https://podcasts.apple.com/fr/podcast/can-ai-align-incentives-in-healthcare-basys-ai-ceo/id1760505254?i=1000669245124",
@@ -43,7 +43,7 @@ export default function FeaturedVideos() {
 		{
 			src: "https://open.spotify.com/episode/5omEkOwR0DNuaAuVKVgZas",
 			type: "Podcast",
-			img: "/podcast/next.jpg",
+			img: "/podcast/next.webp",
 		},
 	];
 
