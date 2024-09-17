@@ -147,7 +147,7 @@ export default function PublishedPapers() {
 			</div>
 
 			{visiblePapers < papers.length && (
-				<div className="flex justify-center">
+				<div className="flex justify-center pt-5">
 					<button
 						onClick={showMorePapers}
 						className="z-30 flex items-center gap-2 text-primary underline underline-offset-4 hover:text-primary-hover"

@@ -10,6 +10,7 @@ import Publications from "@/components/publications";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { outfit } from "./fonts/fonts";
+import FeaturedVideos from "@/components/videos";
 
 export default function Home() {
 	const { ref, inView } = useInView({
@@ -79,6 +80,9 @@ export default function Home() {
 			</div>
 			<div className="common-style py-12 relative" id="papers">
 				<PublishedPapers />
+			</div>
+			<div className="common-style py-12 relative" id="featured">
+				<FeaturedVideos />
 			</div>
 			<Footer />
 		</div>

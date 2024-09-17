@@ -48,9 +48,9 @@ export default function Publication({ index, publication }: Props) {
 			variants={publicationVariants}
 			className={`${
 				theme === "light" ? "border shadow-xl" : "neumorphism"
-			} rounded-md md:w-96 md:flex-shrink-0 flex flex-col justify-between p-5 z-10`}
+			} rounded-md md:flex-shrink-0 flex flex-col justify-between p-5 z-10`}
 		>
-			<p className="pt-2 font-light pb-2 text-foreground-secondary text-sm md:text-base">
+			<p className="pt-2 font-light pb-2 text-foreground-secondary text-sm">
 				{publication.description}
 			</p>
 			<div className="border-t pt-2 flex justify-between">

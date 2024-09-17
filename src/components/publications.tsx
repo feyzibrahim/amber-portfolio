@@ -72,14 +72,6 @@ export default function Publications() {
 			description:
 				"basys.ai, a healthtech startup, spun out of Harvard, is looking to launch its services in India in a few months. It uses its proprietary AI technology to track, predict and provide interventions to improve treatment outcomes for better metabolic health.",
 		},
-		{
-			title: "NASDAQ",
-			year: "2022",
-			src: "/pub/nasdaq.png",
-			link: "https://www.nasdaq.com/articles/amber-nigam%3A-improving-metabolic-health-for-billions-through-ai",
-			description:
-				"Hey, guys! It's Spiffy, and I'm back again on Planet Earth with an eye out for entrepreneurs making a difference in the world! I have another great interview for you this week. Today, I'm excited to speak with Amber Nigam, the co-founder and CEO of basys.ai. Let's see what inspiring work he's been up to.",
-		},
 	];
 
 	const [isSliding, setIsSliding] = useState(false);
@@ -126,63 +118,22 @@ export default function Publications() {
 		}
 	};
 
-	const [visibleArticles, setVisibleArticles] = useState(4); // Initially show 4 articles
+	const [visibleArticles, setVisibleArticles] = useState(6); // Initially show 6 articles
 
 	// Function to load more articles
 	const showMoreArticles = () => {
-		setVisibleArticles((prev) => prev + 4); // Show 4 more articles
+		setVisibleArticles((prev) => prev + 6); // Show 6 more articles
 	};
 
 	return (
 		<div>
-			<div className="relative hidden md:block">
-				<motion.div
-					ref={carouselRef}
-					transition={{ duration: 0.5 }}
-					className="py-10 overflow-x-scroll overflow-y-hidden hide-scrollbar scroll-smooth"
-				>
-					{/* Carousel */}
-					<div className="flex gap-5 p-5">
-						{articles.slice(0, 4).map((article, index) => (
-							<Publication
-								publication={article}
-								index={index}
-								key={index}
-							/>
-						))}
-					</div>
-					<div className="flex justify-center gap-5 p-5">
-						{articles.slice(4).map((article, index) => (
-							<Publication
-								publication={article}
-								index={index}
-								key={index}
-							/>
-						))}
-					</div>
-				</motion.div>
-
-				{/* Left and Right buttons */}
-				<button
-					onClick={handlePrev}
-					className="absolute left-5 md:left-20 top-1/2 transform -translate-y-1/2 p-2 z-30"
-				>
-					<CircleChevronLeft className="w-8 h-8" />
-				</button>
-				<button
-					onClick={handleNext}
-					className="absolute right-5 md:right-20 top-1/2 transform -translate-y-1/2 p-2 z-30"
-				>
-					<CircleChevronRight className="w-8 h-8" />
-				</button>
-			</div>
 			<motion.div
 				ref={carouselRef2}
 				transition={{ duration: 0.5 }}
-				className="py-10 md:hidden"
+				className="py-10"
 			>
 				{/* Carousel */}
-				<div className="px-5 space-y-5">
+				<div className="px-5 md:px-40 grid grid-cols-1 md:grid-cols-3 gap-5">
 					{articles.slice(0, visibleArticles).map((article, index) => (
 						<Publication publication={article} index={index} key={index} />
 					))}

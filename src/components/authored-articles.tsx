@@ -112,8 +112,8 @@ export default function AuthoredArticles() {
 				transition={{ duration: 0.8 }}
 				className={`text-center ${outfit.className} md:w-2/3 mx-auto text-foreground-secondary`}
 			>
-				Authored insightful articles on AI-driven healthcare innovations, data
-				science, and chronic disease management.
+				Authored insightful articles on AI-driven healthcare innovations,
+				entrepreneurship, and leadership.
 			</motion.p>
 
 			<div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">

@@ -38,7 +38,9 @@ export default function Footer() {
 			{/* Left Column with Name, Description, and Social Links */}
 			<motion.div variants={containerVariants} className="z-10 col-span-3">
 				<motion.div variants={childVariants} className="flex items-center">
-					<h1 className="text-3xl font-semibold text-primary">Amber Nigam</h1>
+					<h1 className="text-3xl font-semibold ">
+						Amber <span className="text-primary">Nigam</span>
+					</h1>
 				</motion.div>
 				<motion.p variants={childVariants} className="text-gray-400 mt-4">
 					CEO and Co-founder of{" "}

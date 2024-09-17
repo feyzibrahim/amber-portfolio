@@ -72,16 +72,18 @@ export default function AboutSection() {
 				</motion.h1>
 
 				<motion.p variants={childVariants} className="text-foreground-secondary">
-					With a background rooted in healthcare, AI, and entrepreneurship, and
-					14 years of experience in these fields. He holds a bachelor's degree
-					in Computer Science and a master's degree in Health Data Science from
-					Harvard.
+					With over 14 years of experience in healthcare, artificial
+					intelligence, and entrepreneurship, he brings a deep expertise in
+					leveraging cutting-edge technologies to drive innovation. He holds a
+					Bachelor's degree in Computer Science and a Master's in Health Data
+					Science from Harvard University.
 				</motion.p>
 
 				<motion.p variants={childVariants} className="text-foreground-secondary">
-					Actively involved in both the entrepreneurship and academic
-					communities, his work has been recognized with multiple fellowships,
-					including the Cheng Fellowship and Halcyon Fellowship.
+					Actively engaged in both the entrepreneurial and academic communities,
+					he has received several prestigious fellowships, including the Cheng
+					Fellowship and the Halcyon Fellowship, in recognition of his
+					contributions and achievements.
 				</motion.p>
 
 				{/* Stats */}
@@ -129,17 +131,17 @@ export default function AboutSection() {
 									<ScrollArea className="w-full h-96">
 										<div className="pr-2 space-y-3">
 											<p>
-												With over a dozen years of experience in
-												healthcare and AI, is the co-founder and
-												CEO of basys.ai, a healthtech startup
-												focused on utilizing generative AI to
-												enhance prior authorization and
-												utilization management for health plans
-												and health systems. In this role, he leads
-												business development, strategy, and
-												fundraising efforts, driven by a deep
-												passion for driving cost savings and
-												improving outcomes in healthcare.
+												Amber Nigam, with over a dozen years of
+												experience in healthcare and AI, is the
+												co-founder and CEO of basys.ai, a
+												healthtech startup focused on utilizing
+												generative AI to enhance prior
+												authorization and utilization management
+												for health plans and health systems. In
+												this role, he leads business development,
+												strategy, and fundraising efforts, driven
+												by a deep passion for driving cost savings
+												and improving outcomes in healthcare.
 											</p>
 											<p>
 												Amber holds an MS in Health Data Science
