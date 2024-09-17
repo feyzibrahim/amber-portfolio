@@ -1,12 +1,11 @@
 "use client";
-import { useState } from "react";
-import Articles from "./articles";
-import { Button } from "./ui/button";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
 import { outfit } from "@/app/fonts/fonts";
-import { ArrowRight, MoveRight, Sparkle, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import Articles from "./articles";
 
 export default function AuthoredArticles() {
 	// All the articles

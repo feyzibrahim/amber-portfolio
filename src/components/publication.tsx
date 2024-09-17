@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -46,7 +47,7 @@ export default function Publication({ index, publication }: Props) {
 			custom={index} // Pass the index to variants for staggered delay
 			variants={publicationVariants}
 			className={`${
-				theme === "dark" ? "neumorphism" : "border shadow-xl"
+				theme === "light" ? "border shadow-xl" : "neumorphism"
 			} rounded-md md:w-96 md:flex-shrink-0 flex flex-col justify-between p-5 z-10`}
 		>
 			<p className="pt-2 font-light pb-2 text-foreground-secondary text-sm md:text-base">

@@ -1,4 +1,5 @@
 "use client";
+import AboutSection from "@/components/about";
 import AuthoredArticles from "@/components/authored-articles";
 import FeaturedCompanies from "@/components/featured-companies";
 import FirstSection from "@/components/first-section";
@@ -9,15 +10,9 @@ import Publications from "@/components/publications";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { outfit } from "./fonts/fonts";
-import Image from "next/image";
-import AboutSection from "@/components/about";
 
 export default function Home() {
 	const { ref, inView } = useInView({
-		threshold: 0.5, // Trigger when 10% of the element is visible
-		triggerOnce: true, // Trigger only once
-	});
-	const { ref: ref1, inView: inView1 } = useInView({
 		threshold: 0.5, // Trigger when 10% of the element is visible
 		triggerOnce: true, // Trigger only once
 	});

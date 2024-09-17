@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -44,7 +45,7 @@ export default function Papers({ index, paper }: Props) {
 			custom={index} // Pass the index to variants for staggered delay
 			variants={paperVariants}
 			className={`rounded-md shadow-sm hover:text-primary duration-300 p-5  z-20 ${
-				theme === "dark" ? "neumorphism" : "border shadow-xl"
+				theme === "light" ? "border shadow-xl" : "neumorphism"
 			}`}
 		>
 			<Link href={paper.link} target="_blank">

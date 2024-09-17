@@ -1,8 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogFooter,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "@/components/ui/dialog";
+import { ScrollArea } from "./ui/scroll-area";
 
 export default function AboutSection() {
 	const { ref: ref1, inView: inView1 } = useInView({
@@ -92,6 +103,102 @@ export default function AboutSection() {
 						<h1 className="text-xl md:text-4xl font-bold">2 M+</h1>
 						<p>Funds Raised</p>
 					</motion.div>
+				</motion.div>
+				<motion.div
+					variants={childVariants}
+					className="text-primary z-30 md:flex justify-end"
+				>
+					<Dialog>
+						<DialogTrigger asChild>
+							<button className="z-30 flex items-center gap-2 text-primary underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover">
+								<Image
+									src="/icons/sparkles.png"
+									alt=""
+									width={18}
+									height={18}
+								/>{" "}
+								Show More <ArrowRight className="w-5 h-5" />
+							</button>
+						</DialogTrigger>
+						<DialogContent className="rounded border-none bg-background-secondary">
+							<DialogHeader>
+								<DialogTitle className="text-white">
+									Amber Nigam
+								</DialogTitle>
+								<DialogDescription>
+									<ScrollArea className="w-full h-96">
+										<div className="pr-2 space-y-3">
+											<p>
+												With over a dozen years of experience in
+												healthcare and AI, is the co-founder and
+												CEO of basys.ai, a healthtech startup
+												focused on utilizing generative AI to
+												enhance prior authorization and
+												utilization management for health plans
+												and health systems. In this role, he leads
+												business development, strategy, and
+												fundraising efforts, driven by a deep
+												passion for driving cost savings and
+												improving outcomes in healthcare.
+											</p>
+											<p>
+												Amber holds an MS in Health Data Science
+												from Harvard University, where he was
+												recognized as a Cheng Fellow, Roslyn and
+												Lisle Payne Scholar, and a recipient of
+												the 40 under 40 award from the Boston
+												Congress of Public Health. Throughout his
+												academic career, he has contributed to
+												three patents and authored multiple
+												research papers on the intersection of AI
+												and healthcare.
+											</p>
+											<p>
+												Previously, Amber founded kydots.ai, where
+												he led both business development and
+												engineering teams to deliver a SaaS
+												product for enterprise clients in the
+												financial management and human capital
+												sectors. This venture resulted in two
+												patents, a research paper, and an
+												acquisition.
+											</p>
+											<p>
+												A strong advocate for community and
+												collective leadership, Amber actively
+												mentors startups at TechStars, Harvard,
+												MIT, MassChallenge, and XLerateHealth. He
+												has also served as Co-Director of the
+												Harvard Business Club, providing strategic
+												support and fundraising guidance to
+												Harvard-affiliated founders.
+											</p>
+											<p>
+												An applied machine learning enthusiast,
+												Amber has contributed to both professional
+												and academic initiatives in the AI domain,
+												including co-instructing the
+												"Collaborative Data Science in Medicine -
+												HST.953" course at MIT. His work has been
+												featured at leading machine learning
+												conferences like NeurIPS and ACL, as well
+												as in prestigious journals such as Lancet
+												and Springer.
+											</p>
+											<p>
+												Healthcare and technology are personal
+												passions for Amber, and he has shared his
+												insights on public platforms, speaking at
+												events like TEDx, Mayo Clinic, DuPont, and
+												Udacity. His startups have been featured
+												in outlets such as Forbes and TechCrunch.
+											</p>
+										</div>
+									</ScrollArea>
+								</DialogDescription>
+							</DialogHeader>
+						</DialogContent>
+					</Dialog>
 				</motion.div>
 			</motion.div>
 
