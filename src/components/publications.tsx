@@ -114,7 +114,7 @@ export default function Publications() {
 				initial={{ opacity: 0, y: 100 }}
 				animate={inView2 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-4xl font-bold md:text-center z-20 ${outfit.className}`}
+				className={`text-4xl font-bold z-20 ${outfit.className}`}
 			>
 				Publications
 			</motion.h1>
@@ -123,7 +123,7 @@ export default function Publications() {
 				initial={{ opacity: 0, y: 100 }}
 				animate={inView2 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-foreground-secondary md:w-2/3 mx-auto z-20 md:text-center ${outfit.className}`}
+				className={`text-foreground-secondary z-20 ${outfit.className}`}
 			>
 				Recognized across numerous reputable platforms, basys.ai's pioneering work
 				in AI-driven healthcare continues to solidify its position as an industry
@@ -140,7 +140,7 @@ export default function Publications() {
 					<div className="flex justify-center mt-10">
 						<button
 							onClick={showMoreArticles}
-							className="z-30  flex items-center gap-2 text-primary underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover"
+							className="z-30  flex items-center gap-2 text-card underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover"
 						>
 							<Image
 								src="/icons/sparkles.png"

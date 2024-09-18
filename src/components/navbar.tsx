@@ -51,21 +51,21 @@ export default function Navbar() {
 						<Link href="#about">About</Link>
 					</p>
 					<p className="text-foreground cursor-pointer hover:text-foreground hover:underline duration-300">
+						<Link href="#featured-in">Featured In</Link>
+					</p>
+					<p className="text-foreground cursor-pointer hover:text-foreground hover:underline duration-300">
 						<Link href="#publications">Publications</Link>
 					</p>
 					<p className="text-foreground cursor-pointer hover:text-foreground hover:underline duration-300">
-						<Link href="#articles">Articles</Link>
+						<Link href="#articles">Authored Articles</Link>
 					</p>
 					<p className="text-foreground cursor-pointer hover:text-foreground hover:underline duration-300">
-						<Link href="#papers">Papers</Link>
-					</p>
-					<p className="text-foreground cursor-pointer hover:text-foreground hover:underline duration-300">
-						<Link href="#featured-in">Featured In</Link>
+						<Link href="#papers">Papers Published</Link>
 					</p>
 				</div>
 				<div className="hidden md:flex justify-end gap-5">
 					<Link href="mailto:amber@basys.ai">
-						<Button className="rounded-full font-bold hover:bg-primary-hover">
+						<Button className="rounded-full font-bold hover:bg-secondary">
 							Get In Touch
 						</Button>
 					</Link>
@@ -92,19 +92,6 @@ export default function Navbar() {
 							About
 						</Link>
 						<Link
-							href="#publications"
-							className="text-lg"
-							onClick={toggleDrawer}
-						>
-							Publications
-						</Link>
-						<Link href="#articles" className="text-lg" onClick={toggleDrawer}>
-							Articles
-						</Link>
-						<Link href="#papers" className="text-lg" onClick={toggleDrawer}>
-							Papers
-						</Link>
-						<Link
 							href="#featured-in"
 							className="text-lg"
 							onClick={toggleDrawer}
@@ -112,13 +99,23 @@ export default function Navbar() {
 							Featured In
 						</Link>
 
-						<div className="flex gap-2 items-center">
-							<p>Switch Theme: </p>
-							<ModeToggle />
-						</div>
+						<Link
+							href="#publications"
+							className="text-lg"
+							onClick={toggleDrawer}
+						>
+							Publications
+						</Link>
+						<Link href="#articles" className="text-lg" onClick={toggleDrawer}>
+							Authored Articles
+						</Link>
+						<Link href="#papers" className="text-lg" onClick={toggleDrawer}>
+							Papers Published
+						</Link>
+
 						<div>
 							<Link href="mailto:amber@basys.ai">
-								<Button className="rounded-full font-bold hover:bg-primary-hover px-8 py-6 ">
+								<Button className="rounded-full font-bold hover:bg-secondary px-8 py-6 ">
 									Get In Touch
 								</Button>
 							</Link>

@@ -88,7 +88,7 @@ export default function FeaturedVideos() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-4xl font-bold md:text-center ${outfit.className}`}
+				className={`text-4xl font-bold ${outfit.className}`}
 			>
 				Featured In
 			</motion.h1>
@@ -98,7 +98,7 @@ export default function FeaturedVideos() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`md:text-center ${outfit.className} md:w-2/3 mx-auto text-foreground-secondary`}
+				className={`${outfit.className} text-foreground-secondary`}
 			>
 				Presented on renowned platforms such as TEDx, and at institutions like the
 				Mayo Clinic, Harvard, and MIT.
@@ -115,7 +115,7 @@ export default function FeaturedVideos() {
 				<div className="flex justify-center pt-5">
 					<button
 						onClick={showMoreVideos}
-						className="z-30  flex items-center gap-2 text-primary underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover"
+						className="z-30  flex items-center gap-2 text-card underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover"
 					>
 						<Image src="/icons/sparkles.png" alt="" width={18} height={18} />{" "}
 						Show More <ArrowRight className="w-5 h-5" />

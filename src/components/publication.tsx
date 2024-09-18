@@ -81,7 +81,7 @@ export default function Publication({ index, publication }: Props) {
 				<Link
 					href={publication.link}
 					target="_blank"
-					className="z-30 flex text-xs items-center gap-2 text-primary underline underline-offset-4 hover:text-primary-hover"
+					className="z-30 flex text-xs items-center gap-2 text-card underline underline-offset-4 hover:text-primary-hover"
 				>
 					<Image src="/icons/sparkles.png" alt="" width={15} height={15} /> View{" "}
 					<ArrowRight className="w-4 h-4" />

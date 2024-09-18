@@ -106,7 +106,7 @@ export default function AboutSection() {
 				<motion.div variants={childVariants} className="z-30">
 					<Dialog>
 						<DialogTrigger asChild>
-							<button className="z-30 flex items-center gap-2 text-primary underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover">
+							<button className="z-30 flex items-center gap-2 text-card underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover">
 								<Image
 									src="/icons/sparkles.png"
 									alt=""

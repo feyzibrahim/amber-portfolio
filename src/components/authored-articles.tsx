@@ -91,7 +91,7 @@ export default function AuthoredArticles() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-4xl font-bold md:text-center ${outfit.className}`}
+				className={`text-4xl font-bold ${outfit.className}`}
 			>
 				Authored Articles
 			</motion.h1>
@@ -101,7 +101,7 @@ export default function AuthoredArticles() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`md:text-center ${outfit.className} md:w-2/3 px-5 mx-auto text-foreground-secondary`}
+				className={`${outfit.className} text-foreground-secondary`}
 			>
 				Authored insightful articles on AI-driven healthcare innovations,
 				entrepreneurship, and leadership.
@@ -118,7 +118,7 @@ export default function AuthoredArticles() {
 				<div className="flex justify-center">
 					<button
 						onClick={showMoreArticles}
-						className="z-30 flex items-center gap-2 text-primary underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover"
+						className="z-30 flex items-center gap-2 text-card underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover"
 					>
 						<Image src="/icons/sparkles.png" alt="" width={18} height={18} />{" "}
 						Show More <ArrowRight className="w-5 h-5" />

@@ -30,7 +30,7 @@ export default function Home() {
 				initial={{ opacity: 0 }}
 				animate={inView ? { opacity: 1 } : {}}
 				transition={{ duration: 0.8 }}
-				className="px-5 py-10 md:px-40 relative"
+				className="px-5 pt-5 md:px-40 relative"
 			>
 				<div className="fade-effect-wrapper relative flex overflow-x-hidden space-x-14">
 					<div className="space-x-14 animate-marquee whitespace-nowrap">
