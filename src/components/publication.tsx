@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 
 interface Props {
 	index: number;
@@ -36,7 +37,15 @@ export default function Publication({ index, publication }: Props) {
 		}),
 	};
 
-	const { theme } = useTheme();
+	const { resolvedTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	// Wait until after client-side hydration to show the theme
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) return null; // Ensures the component doesn't render until mounted
 
 	return (
 		<motion.div
@@ -47,7 +56,7 @@ export default function Publication({ index, publication }: Props) {
 			custom={index} // Pass the index to variants for staggered delay
 			variants={publicationVariants}
 			className={`${
-				theme === "dark" ? "neumorphism" : "border shadow-xl"
+				resolvedTheme === "dark" ? "neumorphism" : "border shadow-xl"
 			} rounded-md md:flex-shrink-0 flex flex-col justify-between p-5 z-10`}
 		>
 			<p className="pt-2 font-light pb-2 text-foreground-secondary text-sm">

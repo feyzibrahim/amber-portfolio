@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 
 interface Props {
 	index: number;
@@ -34,7 +35,15 @@ export default function Papers({ index, paper }: Props) {
 		}),
 	};
 
-	const { theme } = useTheme();
+	const { resolvedTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	// Wait until after client-side hydration to show the theme
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) return null; // Ensures the component doesn't render until mounted
 
 	return (
 		<motion.div
@@ -44,8 +53,8 @@ export default function Papers({ index, paper }: Props) {
 			animate={inView ? "visible" : "hidden"} // Animate only when in view
 			custom={index} // Pass the index to variants for staggered delay
 			variants={paperVariants}
-			className={`rounded-md shadow-sm hover:text-primary duration-300 p-5  z-20 ${
-				theme === "dark" ? "neumorphism" : "border shadow-xl"
+			className={`rounded-md shadow-sm hover:text-primary duration-300 p-5 z-20 ${
+				resolvedTheme === "dark" ? "neumorphism" : "border shadow-xl"
 			}`}
 		>
 			<Link href={paper.link} target="_blank">
