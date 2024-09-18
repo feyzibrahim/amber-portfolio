@@ -141,7 +141,7 @@ export default function PublishedPapers() {
 				<div className="flex justify-center pt-5">
 					<button
 						onClick={showMorePapers}
-						className="z-30 flex items-center gap-2 text-primary underline underline-offset-4 hover:text-primary-hover"
+						className="z-30  flex items-center gap-2 text-primary underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover"
 					>
 						<Image src="/icons/sparkles.png" alt="" width={18} height={18} />{" "}
 						Show More <ArrowRight className="w-5 h-5" />

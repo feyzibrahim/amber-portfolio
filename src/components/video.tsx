@@ -47,7 +47,7 @@ export default function Video({ index, article }: Props) {
 				animate={inView ? "visible" : "hidden"}
 				custom={index}
 				variants={articleVariants}
-				className="relative z-30 hover:text-primary duration-300 cursor-pointer shadow-md group"
+				className="relative z-30 hover:text-primary duration-300 cursor-pointer shadow-md group rounded overflow-clip"
 				onClick={() => article.type !== "Podcast" && setModalOpen(true)} // Open modal on click
 			>
 				{/* Conditional rendering based on article type */}
@@ -57,7 +57,7 @@ export default function Video({ index, article }: Props) {
 						alt=""
 						width={958}
 						height={541}
-						className="rounded md:h-48 w-full object-cover"
+						className="md:h-48 w-full object-cover"
 					/>
 				)}
 
@@ -68,7 +68,7 @@ export default function Video({ index, article }: Props) {
 							alt=""
 							width={958}
 							height={541}
-							className="rounded md:h-48 w-full object-cover"
+							className="md:h-48 w-full object-cover"
 						/>
 						{/* Play button for podcast */}
 						<div className="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-40 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">

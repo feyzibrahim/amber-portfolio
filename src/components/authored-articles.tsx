@@ -116,7 +116,7 @@ export default function AuthoredArticles() {
 				entrepreneurship, and leadership.
 			</motion.p>
 
-			<div className="grid grid-cols-1 md:grid-cols-4 gap-5 pt-5 mb-10">
+			<div className="grid grid-cols-1 md:grid-cols-4 gap-5 pt-5">
 				{articles.slice(0, visibleArticles).map((article, index) => (
 					<Articles article={article} index={index} key={index} />
 				))}
@@ -124,10 +124,10 @@ export default function AuthoredArticles() {
 
 			{/* Show More Button */}
 			{visibleArticles < articles.length && (
-				<div className="flex justify-center ">
+				<div className="flex justify-center pt-5">
 					<button
 						onClick={showMoreArticles}
-						className="z-30 flex items-center gap-2 text-primary underline underline-offset-4 hover:text-primary-hover"
+						className="z-30  flex items-center gap-2 text-primary underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover"
 					>
 						<Image src="/icons/sparkles.png" alt="" width={18} height={18} />{" "}
 						Show More <ArrowRight className="w-5 h-5" />
