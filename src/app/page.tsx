@@ -35,7 +35,7 @@ export default function Home() {
 				initial={{ opacity: 0 }}
 				animate={inView ? { opacity: 1 } : {}}
 				transition={{ duration: 0.8 }}
-				className="common-padding relative"
+				className="px-5 py-10 md:px-40 relative"
 			>
 				<div className="fade-effect-wrapper relative flex overflow-x-hidden space-x-14">
 					<div className="space-x-14 animate-marquee whitespace-nowrap">
@@ -57,7 +57,7 @@ export default function Home() {
 					initial={{ opacity: 0, y: 100 }}
 					animate={inView2 ? { opacity: 1, y: 0 } : {}}
 					transition={{ duration: 0.8 }}
-					className={`text-4xl font-bold text-center ${outfit.className}`}
+					className={`text-4xl font-bold md:text-center px-5 ${outfit.className}`}
 				>
 					Publications
 				</motion.h1>
@@ -66,7 +66,7 @@ export default function Home() {
 					initial={{ opacity: 0, y: 100 }}
 					animate={inView2 ? { opacity: 1, y: 0 } : {}}
 					transition={{ duration: 0.8 }}
-					className={`font-light text-foreground-secondary px-5 md:w-2/3 mx-auto pt-5 text-center ${outfit.className}`}
+					className={`font-light text-foreground-secondary px-5 md:w-2/3 mx-auto pt-5 md:text-center ${outfit.className}`}
 				>
 					Recognized across numerous reputable platforms, basys.ai's pioneering
 					work in AI-driven healthcare continues to solidify its position as an
@@ -75,13 +75,13 @@ export default function Home() {
 				<Publications />
 			</div>
 
-			<div className="common-style py-12" id="articles">
+			<div className="common-style" id="articles">
 				<AuthoredArticles />
 			</div>
-			<div className="common-style md:py-12 relative" id="papers">
+			<div className="common-style relative" id="papers">
 				<PublishedPapers />
 			</div>
-			<div className="common-style md:py-12 relative" id="featured">
+			<div className="common-style relative" id="featured-in">
 				<FeaturedVideos />
 			</div>
 			<Footer />

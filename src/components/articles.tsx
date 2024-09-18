@@ -37,7 +37,7 @@ export default function Articles({ index, article }: Props) {
 			variants={articleVariants}
 			className="z-30 hover:text-primary duration-300"
 		>
-			<Link href={article.link} target="_blank" className="p-2">
+			<Link href={article.link} target="_blank">
 				<Image
 					src={article.src}
 					alt=""

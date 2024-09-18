@@ -70,11 +70,11 @@ html {
 }
 
 .common-style {
-	@apply px-5 lg:px-40 min-h-screen md:py-20;
+	@apply px-5 md:px-40 min-h-screen py-5 md:py-10;
 }
 
 .common-padding {
-	@apply px-5 lg:px-40 py-20;
+	@apply px-5 md:px-40 py-5 md:py-10;
 }
 
 .common-button {

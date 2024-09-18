@@ -45,7 +45,7 @@ export default function Papers({ index, paper }: Props) {
 			custom={index} // Pass the index to variants for staggered delay
 			variants={paperVariants}
 			className={`rounded-md shadow-sm hover:text-primary duration-300 p-5  z-20 ${
-				theme === "light" ? "border shadow-xl" : "neumorphism"
+				theme === "dark" ? "neumorphism" : "border shadow-xl"
 			}`}
 		>
 			<Link href={paper.link} target="_blank">

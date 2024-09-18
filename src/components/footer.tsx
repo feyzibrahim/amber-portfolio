@@ -37,7 +37,7 @@ export default function Footer() {
 			initial="hidden"
 			animate={inView ? "visible" : "hidden"}
 			variants={containerVariants}
-			className="common-padding grid grid-cols-1 md:grid-cols-6 gap-8 p-8 border-t relative"
+			className="common-padding grid grid-cols-1 md:grid-cols-6 gap-8 border-t relative"
 		>
 			{/* Left Column with Name, Description, and Social Links */}
 			<motion.div variants={containerVariants} className="z-10 md:col-span-3">
@@ -125,6 +125,14 @@ export default function Footer() {
 						className="duration-300 hover:underline hover:text-primary"
 					>
 						Papers
+					</Link>
+				</motion.div>
+				<motion.div variants={childVariants}>
+					<Link
+						href="#featured-in"
+						className="duration-300 hover:underline hover:text-primary"
+					>
+						Featured In
 					</Link>
 				</motion.div>
 			</motion.div>

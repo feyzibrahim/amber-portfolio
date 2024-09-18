@@ -109,22 +109,13 @@ export default function PublishedPapers() {
 	});
 
 	return (
-		<div className=" md:py-10 space-y-3">
-			<motion.p
-				ref={ref4}
-				initial={{ opacity: 0, y: 20 }}
-				animate={inView4 ? { opacity: 1, y: 0 } : {}}
-				transition={{ duration: 0.8 }}
-				className={`text-primary uppercase ${outfit.className}`}
-			>
-				R&D
-			</motion.p>
+		<div className="md:py-10 space-y-3 ">
 			<motion.h1
 				ref={ref4}
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView4 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-4xl font-bold ${outfit.className}`}
+				className={`text-4xl font-bold md:text-center ${outfit.className}`}
 			>
 				Papers Published
 			</motion.h1>
@@ -134,7 +125,7 @@ export default function PublishedPapers() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView4 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`${outfit.className} md:w-2/3  pb-5 text-foreground-secondary`}
+				className={`${outfit.className} md:w-2/3 mx-auto md:text-center pb-5 text-foreground-secondary`}
 			>
 				Published research papers focused on advancements in AI, health data
 				science, and chronic disease management.

@@ -91,7 +91,7 @@ export default function AuthoredArticles() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-primary uppercase text-center ${outfit.className}`}
+				className={`text-primary uppercase md:text-center ${outfit.className}`}
 			>
 				Authored
 			</motion.p>
@@ -100,7 +100,7 @@ export default function AuthoredArticles() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-4xl font-bold text-center ${outfit.className}`}
+				className={`text-4xl font-bold md:text-center ${outfit.className}`}
 			>
 				Articles
 			</motion.h1>
@@ -110,13 +110,13 @@ export default function AuthoredArticles() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-center ${outfit.className} md:w-2/3 mx-auto text-foreground-secondary`}
+				className={`md:text-center ${outfit.className} md:w-2/3 mx-auto text-foreground-secondary`}
 			>
 				Authored insightful articles on AI-driven healthcare innovations,
 				entrepreneurship, and leadership.
 			</motion.p>
 
-			<div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+			<div className="grid grid-cols-1 md:grid-cols-4 gap-5 pt-5 mb-10">
 				{articles.slice(0, visibleArticles).map((article, index) => (
 					<Articles article={article} index={index} key={index} />
 				))}

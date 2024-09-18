@@ -18,13 +18,6 @@ export default function FeaturedVideos() {
 			img: "/thumb/tedx.webp",
 		},
 		{
-			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Halcyon+Fellowship+-+Halcyon+2024+Health+Showcase+%233.mp4",
-			type: "Uploaded",
-			title: "Halcyon 2024 Health Showcase",
-			loc: "Halcyon",
-			img: "/thumb/halcyon.png",
-		},
-		{
 			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Mayo+Clinic+%232.mp4",
 			type: "Uploaded",
 			title: "Mayo Clinic Platform_Accelerate: basys.ai",
@@ -32,10 +25,18 @@ export default function FeaturedVideos() {
 			img: "/thumb/mayo.webp",
 		},
 		{
+			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Halcyon+Fellowship+-+Halcyon+2024+Health+Showcase+%233.mp4",
+			type: "Uploaded",
+			title: "Halcyon 2024 Health Showcase",
+			loc: "Halcyon",
+			img: "/thumb/halcyon.png",
+		},
+
+		{
 			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Cheng+Fellowship+%233.mp4",
 			type: "Uploaded",
 			title: "2023 SICI Showcase",
-			loc: "Social Innovation and Change Initiative",
+			loc: "Harvard University",
 			img: "/thumb/sici.png",
 		},
 		{
@@ -43,7 +44,7 @@ export default function FeaturedVideos() {
 			type: "YouTube",
 			title: "Data Scientist Raises $2.4M to Automate Healthcare Authorizations and Reimbursements",
 			loc: "The SaaS CFO",
-			img: "/thumb/saas.webp",
+			img: "/thumb/saas_cfo.jpg",
 		},
 		{
 			src: "https://podcasts.apple.com/us/podcast/bringing-artificial-intelligence-into-prior-authorization/id1485735357?i=1000669672537",
@@ -87,7 +88,7 @@ export default function FeaturedVideos() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-4xl font-bold text-center ${outfit.className}`}
+				className={`text-4xl font-bold md:text-center ${outfit.className}`}
 			>
 				Featured In
 			</motion.h1>
@@ -97,13 +98,13 @@ export default function FeaturedVideos() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`text-center ${outfit.className} md:w-2/3 mx-auto text-foreground-secondary pb-5`}
+				className={`md:text-center ${outfit.className} md:w-2/3 mx-auto text-foreground-secondary pb-5`}
 			>
-				Featured insightful videos and podcasts on AI-driven healthcare
-				innovations, entrepreneurship, and leadership.
+				Presented on renowned platforms such as TEDx, and at institutions like the
+				Mayo Clinic, Harvard, and MIT.
 			</motion.p>
 
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 				{videos.slice(0, visibleVideos).map((article, index) => (
 					<Video article={article} index={index} key={index} />
 				))}

@@ -60,6 +60,9 @@ export default function Navbar() {
 					<p className="text-foreground cursor-pointer hover:text-foreground">
 						<Link href="#papers">Papers</Link>
 					</p>
+					<p className="text-foreground cursor-pointer hover:text-foreground">
+						<Link href="#featured-in">Featured In</Link>
+					</p>
 				</div>
 				<div className="hidden md:flex justify-end gap-5">
 					<Link href="mailto:amber@basys.ai">
@@ -101,6 +104,13 @@ export default function Navbar() {
 						</Link>
 						<Link href="#papers" className="text-lg" onClick={toggleDrawer}>
 							Papers
+						</Link>
+						<Link
+							href="#featured-in"
+							className="text-lg"
+							onClick={toggleDrawer}
+						>
+							Featured In
 						</Link>
 
 						<div className="flex gap-2 items-center">

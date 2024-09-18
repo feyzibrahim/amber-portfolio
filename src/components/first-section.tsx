@@ -35,10 +35,10 @@ export default function FirstSection() {
 			variants={containerVariants}
 			initial="hidden"
 			animate={inView1 ? "visible" : "hidden"} // Only animate when in view
-			className="common-style relative grid grid-cols-1 md:grid-cols-2 gap-5"
+			className="pt-10 common-style relative grid grid-cols-1 md:grid-cols-2 gap-0"
 		>
 			{/* Title with staggered animation */}
-			<div className="flex flex-col justify-center gap-10 z-20">
+			<div className="flex flex-col justify-center gap-5 md:gap-10 z-20">
 				<motion.h1
 					className={`text-3xl md:text-5xl font-bold text-foreground`}
 					variants={childVariants}
@@ -55,7 +55,7 @@ export default function FirstSection() {
 			{/* Image with staggered animation */}
 			<motion.div
 				variants={childVariants}
-				className=" flex items-center justify-center"
+				className="flex items-center justify-center"
 			>
 				<Image
 					src="/amber.png"
