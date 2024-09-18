@@ -67,7 +67,7 @@ export default function Publications() {
 				"The inaugural 40 Under 40 Public Health Catalyst Awards aim to highlight the rising leaders and innovators of the public health field. The Boston Congress of Public Health (BCPH) and the HPHR Journal selected a group of “leaders, entrepreneurs, researchers, scientists, activists”, and doctors",
 		},
 		{
-			title: "Basys.ai grabs $2.4M for its prior authorization tech powered by Mayo Clinic's data",
+			title: "Tech Crunch",
 			year: "2023",
 			src: "/pub/techchrunch2.png",
 			link: "https://techcrunch.com/2023/08/10/basys-ai-2-4m-prior-authorization-mayo-clinic-healthcare/",
@@ -75,7 +75,7 @@ export default function Publications() {
 				"One new company taking advantage is Basys.ai, which helps health plans and health systems adopt value-based care, starting with prior authorization. It was founded in early 2022 by Amber Nigam and Jie Sun, who met while in Harvard's health data science program.",
 		},
 		{
-			title: "NLP and Deep Learning Methods for Curbing the Spread of Misinformation in India",
+			title: "Adobe",
 			year: "2021",
 			src: "/pub/adobe2.png",
 			link: "https://research.adobe.com/publication/nlp-and-deep-learning-methods-for-curbing-the-spread-of-misinformation-in-india/",
@@ -83,7 +83,7 @@ export default function Publications() {
 				"The current fight against COVID-19 is not only around its prevention and cure but it is also about mitigating the negative impact resulting from misinformation around it. The pervasiveness of social media and access to smartphones has propelled the spread of misinformation on such a large scale that it is considered as one of the main threats to our society by the World Economic Forum.",
 		},
 		{
-			title: "basys.ai Raises an Oversubscribed Pre-Seed Funding Round to Facilitate Seamless Prior Authorization for Health Plans and Members",
+			title: "Business Insider",
 			year: "2023",
 			src: "/pub/Business-Insider-Logo.png",
 			link: "https://markets.businessinsider.com/news/stocks/basys-ai-raises-an-oversubscribed-pre-seed-funding-round-to-facilitate-seamless-prior-authorization-for-health-plans-and-members-1032554893",
