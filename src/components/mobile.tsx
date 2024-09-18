@@ -95,7 +95,7 @@ export default function Mobile() {
 				/>
 			</motion.div>
 
-			<div className="space-y-5 pb-5">
+			<div className="space-y-5 py-5">
 				<motion.p variants={childVariants} className="text-card">
 					About
 				</motion.p>
