@@ -10,15 +10,15 @@ html {
 	:root {
 		--background: 0 0% 98%;
 		--background-secondary: 0, 0%, 80%;
-		--foreground: 236° 100%, 0%;
+		--foreground: 236, 100%, 0%;
 		--foreground-secondary: 0, 0%, 49%;
 		--basys: 202, 100%, 61%;
-		--card: 202, 100%, 61%;
+		--card: 202, 100%, 30%;
 		--card-foreground: 0 0% 98%;
 		--popover: 240 10% 3.9%;
 		--popover-foreground: 0 0% 98%;
 		--primary: 235, 68%, 4%;
-		--primary-hover: 202, 100%, 40%;
+		--primary-hover: 202, 100%, 50%;
 		--primary-foreground: 0 0% 98%;
 		--secondary: 0, 0%, 22%;
 		--secondary-foreground: 0 0% 98%;
@@ -38,19 +38,19 @@ html {
 		--chart-5: 340 75% 55%;
 	}
 	.dark {
-		--background: 235, 68%, 4%;
-		--background-secondary: 0, 0%, 12%;
-		--foreground: 0 0% 98%;
+		--background: 0 0% 98%;
+		--background-secondary: 0, 0%, 80%;
+		--foreground: 236, 100%, 0%;
 		--foreground-secondary: 0, 0%, 49%;
-		--basys: 214, 41%, 33%;
-		--card: 240 10% 3.9%;
+		--basys: 202, 100%, 61%;
+		--card: 202, 100%, 30%;
 		--card-foreground: 0 0% 98%;
 		--popover: 240 10% 3.9%;
 		--popover-foreground: 0 0% 98%;
-		--primary: 202, 100%, 61%;
+		--primary: 235, 68%, 4%;
 		--primary-hover: 202, 100%, 50%;
-		--primary-foreground: 235, 68%, 4%;
-		--secondary: 240 3.7% 15.9%;
+		--primary-foreground: 0 0% 98%;
+		--secondary: 0, 0%, 22%;
 		--secondary-foreground: 0 0% 98%;
 		--muted: 240 3.7% 15.9%;
 		--muted-foreground: 240 5% 64.9%;
@@ -112,16 +112,6 @@ html {
 .fade-effect-wrapper::after {
 	right: 0;
 	background: linear-gradient(to left, rgba(250, 250, 250, 1), rgba(255, 255, 255, 0));
-}
-
-.dark .fade-effect-wrapper::before {
-	left: 0;
-	background: linear-gradient(to right, rgba(3, 4, 17, 1), rgba(3, 4, 17, 0));
-}
-
-.dark .fade-effect-wrapper::after {
-	right: 0;
-	background: linear-gradient(to left, rgba(3, 4, 17, 1), rgba(3, 4, 17, 0));
 }
 
 .circle-gradient {

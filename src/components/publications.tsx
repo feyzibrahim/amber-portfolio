@@ -67,12 +67,28 @@ export default function Publications() {
 				"The inaugural 40 Under 40 Public Health Catalyst Awards aim to highlight the rising leaders and innovators of the public health field. The Boston Congress of Public Health (BCPH) and the HPHR Journal selected a group of “leaders, entrepreneurs, researchers, scientists, activists”, and doctors",
 		},
 		{
-			title: "YOURSTORY",
-			year: "2022",
-			src: "/pub/yourstory.png",
-			link: "https://yourstory.com/2022/08/basys-ai-harvard-healthtech-startup-india-ayushman-bharat",
+			title: "Basys.ai grabs $2.4M for its prior authorization tech powered by Mayo Clinic's data",
+			year: "2023",
+			src: "/pub/techchrunch2.png",
+			link: "https://techcrunch.com/2023/08/10/basys-ai-2-4m-prior-authorization-mayo-clinic-healthcare/",
 			description:
-				"basys.ai, a healthtech startup, spun out of Harvard, is looking to launch its services in India in a few months. It uses its proprietary AI technology to track, predict and provide interventions to improve treatment outcomes for better metabolic health.",
+				"One new company taking advantage is Basys.ai, which helps health plans and health systems adopt value-based care, starting with prior authorization. It was founded in early 2022 by Amber Nigam and Jie Sun, who met while in Harvard's health data science program.",
+		},
+		{
+			title: "NLP and Deep Learning Methods for Curbing the Spread of Misinformation in India",
+			year: "2021",
+			src: "/pub/adobe2.png",
+			link: "https://research.adobe.com/publication/nlp-and-deep-learning-methods-for-curbing-the-spread-of-misinformation-in-india/",
+			description:
+				"The current fight against COVID-19 is not only around its prevention and cure but it is also about mitigating the negative impact resulting from misinformation around it. The pervasiveness of social media and access to smartphones has propelled the spread of misinformation on such a large scale that it is considered as one of the main threats to our society by the World Economic Forum.",
+		},
+		{
+			title: "basys.ai Raises an Oversubscribed Pre-Seed Funding Round to Facilitate Seamless Prior Authorization for Health Plans and Members",
+			year: "2023",
+			src: "/pub/Business-Insider-Logo.png",
+			link: "https://markets.businessinsider.com/news/stocks/basys-ai-raises-an-oversubscribed-pre-seed-funding-round-to-facilitate-seamless-prior-authorization-for-health-plans-and-members-1032554893",
+			description:
+				"basys.ai, a healthcare technology company co-founded by Harvard alumni Amber Nigam and Jie Sun in 2022 at Harvard University, is excited to announce the successful completion of its latest funding round, securing a total of $2.4 million in investments. This funding will enable basys.ai to further its mission of empowering payers to streamline processes like prior authorization and utilization management.",
 		},
 	];
 
@@ -153,27 +169,6 @@ export default function Publications() {
 					</div>
 				)}
 			</motion.div>
-			<Image
-				src="/circle/light4.png"
-				alt=""
-				width={843}
-				height={964}
-				className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hide-on-light-mode"
-			/>
-			<Image
-				src="/circle/light5.png"
-				alt=""
-				width={843}
-				height={964}
-				className="absolute bottom-0 right-0 z-0 hide-on-light-mode"
-			/>
-			<Image
-				src="/circle/light6.png"
-				alt=""
-				width={843}
-				height={964}
-				className="absolute top-0 left-0 z-0 hide-on-light-mode"
-			/>
 		</div>
 	);
 }

@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { outfit } from "./fonts/fonts";
 import FeaturedVideos from "@/components/videos";
+import Mobile from "@/components/mobile";
 
 export default function Home() {
 	const { ref, inView } = useInView({
@@ -21,30 +22,33 @@ export default function Home() {
 	return (
 		<div className="bg-background text-foreground">
 			<Navbar />
-			<FirstSection />
+			<div className="hidden md:block">
+				<FirstSection />
 
-			{/* Featured Slider */}
+				{/* Featured Slider */}
 
-			<motion.div
-				ref={ref}
-				initial={{ opacity: 0 }}
-				animate={inView ? { opacity: 1 } : {}}
-				transition={{ duration: 0.8 }}
-				className="px-5 pt-5 md:px-40 relative"
-			>
-				<div className="fade-effect-wrapper relative flex overflow-x-hidden space-x-14">
-					<div className="space-x-14 animate-marquee whitespace-nowrap">
-						<FeaturedCompanies />
+				<motion.div
+					ref={ref}
+					initial={{ opacity: 0 }}
+					animate={inView ? { opacity: 1 } : {}}
+					transition={{ duration: 0.8 }}
+					className="px-5 pt-5 md:px-40 relative"
+				>
+					<div className="fade-effect-wrapper relative flex overflow-x-hidden space-x-14">
+						<div className="space-x-14 animate-marquee whitespace-nowrap">
+							<FeaturedCompanies />
+						</div>
+						<div className="absolute top-0 space-x-14 animate-marqueeOpposite whitespace-nowrap">
+							<FeaturedCompanies />
+						</div>
 					</div>
-					<div className="absolute top-0 space-x-14 animate-marqueeOpposite whitespace-nowrap">
-						<FeaturedCompanies />
-					</div>
-				</div>
-			</motion.div>
+				</motion.div>
 
-			{/* About */}
+				{/* About */}
 
-			<AboutSection />
+				<AboutSection />
+			</div>
+			<Mobile />
 
 			<div className="common-style relative" id="featured-in">
 				<FeaturedVideos />

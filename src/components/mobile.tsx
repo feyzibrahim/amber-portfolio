@@ -1,5 +1,8 @@
 "use client";
-
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import FeaturedCompanies from "./featured-companies";
 import {
 	Dialog,
 	DialogContent,
@@ -7,46 +10,78 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
-} from "@/components/ui/dialog";
-import { motion } from "framer-motion";
+} from "./ui/dialog";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import { useInView } from "react-intersection-observer";
 import { ScrollArea } from "./ui/scroll-area";
 
-export default function AboutSection() {
+export default function Mobile() {
+	// useInView for scroll-triggered animation
 	const { ref: ref1, inView: inView1 } = useInView({
-		triggerOnce: true,
-		threshold: 0.3,
+		triggerOnce: true, // Trigger animation only once
+		threshold: 0.1, // Start animation when 10% of the element is visible
 	});
 
-	// Parent variants for staggering children animations
+	// Parent motion variants with staggered animation for children
 	const containerVariants = {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
 			transition: {
-				staggerChildren: 0.3, // 0.3 seconds delay between each item
+				staggerChildren: 0.3, // Stagger animation by 300ms
 			},
 		},
 	};
 
-	// Child variants for individual items animation
+	// Children motion variants
 	const childVariants = {
 		hidden: { opacity: 0, y: 50 },
-		visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+		visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 	};
 
 	return (
 		<motion.div
 			ref={ref1}
+			variants={containerVariants}
 			initial="hidden"
 			animate={inView1 ? "visible" : "hidden"}
-			variants={containerVariants} // Parent container to stagger children
-			className="common-style relative grid grid-cols-1 md:grid-cols-2 gap-5"
-			id="about"
+			className="px-5 pt-5 md:hidden space-y-10"
 		>
-			{/* Left side: image */}
+			<motion.h1
+				className={`text-3xl md:text-5xl font-bold text-foreground z-20`}
+				variants={childVariants}
+			>
+				Amber Nigam
+			</motion.h1>
+			<motion.p className="text-foreground  z-20" variants={childVariants}>
+				Amber Nigam is the co-founder and CEO of basys.ai, a digital health
+				startup optimizing healthcare workflows with AI. A Harvard graduate, his
+				work in AI and healthcare has been recognized in top conferences and
+				journals.
+			</motion.p>
+
+			<motion.div
+				variants={childVariants}
+				className="flex items-center justify-center"
+			>
+				<Image
+					src="/amber_g.png"
+					alt="Amber Nigam"
+					width={403}
+					height={448}
+					priority
+					className="z-10"
+				/>
+			</motion.div>
+			<motion.div variants={childVariants} className="px-5 relative">
+				<div className="fade-effect-wrapper relative flex overflow-x-hidden space-x-14">
+					<div className="space-x-14 animate-marquee whitespace-nowrap">
+						<FeaturedCompanies />
+					</div>
+					<div className="absolute top-0 space-x-14 animate-marqueeOpposite whitespace-nowrap">
+						<FeaturedCompanies />
+					</div>
+				</div>
+			</motion.div>
 			<motion.div
 				variants={childVariants}
 				className="z-10 flex items-center justify-center"
@@ -56,12 +91,11 @@ export default function AboutSection() {
 					alt="basys.ai logo"
 					width={950}
 					height={955}
-					className="w-2/3"
+					className="w-2/4"
 				/>
 			</motion.div>
 
-			{/* Right side: text and stats */}
-			<motion.div className="flex flex-col justify-center gap-5">
+			<div className="space-y-5 pb-5">
 				<motion.p variants={childVariants} className="text-card">
 					About
 				</motion.p>
@@ -193,7 +227,7 @@ export default function AboutSection() {
 						</DialogContent>
 					</Dialog>
 				</motion.div>
-			</motion.div>
+			</div>
 		</motion.div>
 	);
 }

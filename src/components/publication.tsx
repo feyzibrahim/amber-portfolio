@@ -1,11 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
 
 interface Props {
 	index: number;
@@ -37,16 +35,6 @@ export default function Publication({ index, publication }: Props) {
 		}),
 	};
 
-	const { resolvedTheme } = useTheme();
-	const [mounted, setMounted] = useState(false);
-
-	// Wait until after client-side hydration to show the theme
-	useEffect(() => {
-		setMounted(true);
-	}, []);
-
-	if (!mounted) return null; // Ensures the component doesn't render until mounted
-
 	return (
 		<motion.div
 			ref={ref} // Each publication has its own observer
@@ -55,9 +43,7 @@ export default function Publication({ index, publication }: Props) {
 			animate={inView ? "visible" : "hidden"} // Animate only when in view
 			custom={index} // Pass the index to variants for staggered delay
 			variants={publicationVariants}
-			className={`${
-				resolvedTheme === "dark" ? "neumorphism" : "border shadow-md"
-			} rounded-md md:flex-shrink-0 flex flex-col justify-between p-5 z-10 hover:shadow-xl duration-300`}
+			className={`border shadow-md rounded-md md:flex-shrink-0 flex flex-col justify-between p-5 z-10 hover:shadow-xl duration-300`}
 		>
 			<p className="pt-2 font-light pb-2 text-foreground-secondary text-sm">
 				{publication.description}

@@ -148,20 +148,6 @@ export default function PublishedPapers() {
 					</button>
 				</div>
 			)}
-			<Image
-				src="/circle/light7.png"
-				alt=""
-				width={843}
-				height={964}
-				className="absolute -bottom-52 right-0 z-0 hide-on-light-mode"
-			/>
-			<Image
-				src="/circle/light6.png"
-				alt=""
-				width={843}
-				height={964}
-				className="absolute -top-96 left-0 z-0 hide-on-light-mode"
-			/>
 		</div>
 	);
 }

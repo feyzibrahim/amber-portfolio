@@ -64,21 +64,6 @@ export default function FirstSection() {
 					className="z-10"
 				/>
 			</motion.div>
-			<Image
-				src="/circle/light1.png"
-				alt=""
-				width={843}
-				height={964}
-				className="absolute top-0 right-0 z-0 hide-on-light-mode"
-			/>
-			<Image
-				src="/circle/light2.png"
-				alt=""
-				width={843}
-				height={964}
-				className="absolute top-0 -left-0 z-10 hide-on-light-mode"
-			/>
-
 			{/* Paragraph with staggered animation */}
 		</motion.div>
 	);

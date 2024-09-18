@@ -51,7 +51,7 @@ export default function Footer() {
 					<Link
 						href="https://www.basys.ai/"
 						target="_blank"
-						className="text-basys hover:underline hover:text-primary-hover"
+						className="text-card hover:underline hover:text-primary-hover"
 					>
 						basys.ai.
 					</Link>{" "}
@@ -105,6 +105,14 @@ export default function Footer() {
 				</motion.div>
 				<motion.div variants={childVariants}>
 					<Link
+						href="#featured-in"
+						className="duration-300 hover:underline hover:text-primary-hover"
+					>
+						Featured In
+					</Link>
+				</motion.div>
+				<motion.div variants={childVariants}>
+					<Link
 						href="#publications"
 						className="duration-300 hover:underline hover:text-primary-hover"
 					>
@@ -116,7 +124,7 @@ export default function Footer() {
 						href="#articles"
 						className="duration-300 hover:underline hover:text-primary-hover"
 					>
-						Articles
+						Authored Articles
 					</Link>
 				</motion.div>
 				<motion.div variants={childVariants}>
@@ -124,15 +132,7 @@ export default function Footer() {
 						href="#papers"
 						className="duration-300 hover:underline hover:text-primary-hover"
 					>
-						Papers
-					</Link>
-				</motion.div>
-				<motion.div variants={childVariants}>
-					<Link
-						href="#featured-in"
-						className="duration-300 hover:underline hover:text-primary-hover"
-					>
-						Featured In
+						Papers Published
 					</Link>
 				</motion.div>
 			</motion.div>
@@ -178,22 +178,6 @@ export default function Footer() {
 					</Link>
 				</motion.div>
 			</motion.div>
-
-			{/* Decorative Images */}
-			<Image
-				src="/circle/light8.png"
-				alt=""
-				width={843}
-				height={964}
-				className="absolute bottom-0 left-0 z-0 hide-on-light-mode"
-			/>
-			<Image
-				src="/circle/circles.png"
-				alt=""
-				width={843}
-				height={964}
-				className="absolute bottom-0 right-0 z-0"
-			/>
 		</motion.div>
 	);
 }
