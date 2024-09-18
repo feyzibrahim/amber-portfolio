@@ -63,12 +63,12 @@ export default function AboutSection() {
 
 			{/* Right side: text and stats */}
 			<motion.div className="flex flex-col justify-center gap-5">
-				<motion.p variants={childVariants} className="text-primary">
+				<motion.p variants={childVariants} className="text-card">
 					About
 				</motion.p>
 
 				<motion.h1 variants={childVariants} className="text-3xl font-bold">
-					CEO and co-founder of <span className="text-primary">basys.ai</span>
+					CEO and co-founder of <span className="text-card">basys.ai</span>
 				</motion.h1>
 
 				<motion.p variants={childVariants} className="text-foreground-secondary">

@@ -51,7 +51,7 @@ export default function Footer() {
 					<Link
 						href="https://www.basys.ai/"
 						target="_blank"
-						className="text-basys hover:underline hover:text-primary"
+						className="text-basys hover:underline hover:text-primary-hover"
 					>
 						basys.ai.
 					</Link>{" "}
