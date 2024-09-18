@@ -103,7 +103,7 @@ export default function AboutSection() {
 						<p>Funds Raised</p>
 					</motion.div>
 				</motion.div>
-				<motion.div variants={childVariants} className="text-primary z-30">
+				<motion.div variants={childVariants} className="z-30">
 					<Dialog>
 						<DialogTrigger asChild>
 							<button className="z-30 flex items-center gap-2 text-primary underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover">
@@ -121,7 +121,7 @@ export default function AboutSection() {
 								<DialogTitle>Amber Nigam</DialogTitle>
 								<DialogDescription>
 									<ScrollArea className="w-full h-96">
-										<div className="pr-2 space-y-3 text-foreground font-light">
+										<div className="pr-2 space-y-3 text-left text-black">
 											<p>
 												Amber Nigam, with over a dozen years of
 												experience in healthcare and AI, is the
