@@ -123,7 +123,7 @@ export default function Publications() {
 				initial={{ opacity: 0, y: 100 }}
 				animate={inView2 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`font-light text-foreground-secondary md:w-2/3 mx-auto z-20 md:text-center ${outfit.className}`}
+				className={`text-foreground-secondary md:w-2/3 mx-auto z-20 md:text-center ${outfit.className}`}
 			>
 				Recognized across numerous reputable platforms, basys.ai's pioneering work
 				in AI-driven healthcare continues to solidify its position as an industry
