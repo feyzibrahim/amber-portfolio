@@ -35,7 +35,7 @@ export default function Articles({ index, article }: Props) {
 			animate={inView ? "visible" : "hidden"} // Animate only when in view
 			custom={index} // Pass the index to variants for staggered delay
 			variants={articleVariants}
-			className="z-30 hover:text-primary duration-300"
+			className="z-30 hover:text-primary-hover duration-300 hover:shadow-md"
 		>
 			<Link href={article.link} target="_blank">
 				<Image
@@ -45,7 +45,7 @@ export default function Articles({ index, article }: Props) {
 					height={541}
 					className="rounded-md md:h-32 w-full object-cover"
 				/>
-				<p>{article.title}</p>
+				<p className="p-2">{article.title}</p>
 			</Link>
 		</motion.div>
 	);

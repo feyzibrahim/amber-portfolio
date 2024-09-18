@@ -109,7 +109,7 @@ export default function PublishedPapers() {
 	});
 
 	return (
-		<div className="md:py-10 space-y-3 ">
+		<div className="space-y-5">
 			<motion.h1
 				ref={ref4}
 				initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ export default function PublishedPapers() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView4 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`${outfit.className} md:w-2/3 mx-auto md:text-center pb-5 text-foreground-secondary`}
+				className={`${outfit.className} md:w-2/3 mx-auto md:text-center text-foreground-secondary`}
 			>
 				Published research papers focused on advancements in AI, health data
 				science, and chronic disease management.
@@ -138,7 +138,7 @@ export default function PublishedPapers() {
 			</div>
 
 			{visiblePapers < papers.length && (
-				<div className="flex justify-center pt-5">
+				<div className="flex justify-center">
 					<button
 						onClick={showMorePapers}
 						className="z-30  flex items-center gap-2 text-primary underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover"

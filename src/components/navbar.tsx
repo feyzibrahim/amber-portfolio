@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
-import Image from "next/image";
 
 export default function Navbar() {
 	const [isVisible, setIsVisible] = useState(true);
@@ -48,19 +47,19 @@ export default function Navbar() {
 				className={`w-full px-5 lg:px-40 py-5 flex justify-between items-center absolute top-0 left-0 transition-transform duration-300 z-50 `}
 			>
 				<div className="hidden lg:flex justify-center gap-5 animate-fadeIn ">
-					<p className="text-foreground cursor-pointer hover:text-foreground">
+					<p className="text-foreground cursor-pointer hover:text-foreground hover:underline duration-300">
 						<Link href="#about">About</Link>
 					</p>
-					<p className="text-foreground cursor-pointer hover:text-foreground">
+					<p className="text-foreground cursor-pointer hover:text-foreground hover:underline duration-300">
 						<Link href="#publications">Publications</Link>
 					</p>
-					<p className="text-foreground cursor-pointer hover:text-foreground">
+					<p className="text-foreground cursor-pointer hover:text-foreground hover:underline duration-300">
 						<Link href="#articles">Articles</Link>
 					</p>
-					<p className="text-foreground cursor-pointer hover:text-foreground">
+					<p className="text-foreground cursor-pointer hover:text-foreground hover:underline duration-300">
 						<Link href="#papers">Papers</Link>
 					</p>
-					<p className="text-foreground cursor-pointer hover:text-foreground">
+					<p className="text-foreground cursor-pointer hover:text-foreground hover:underline duration-300">
 						<Link href="#featured-in">Featured In</Link>
 					</p>
 				</div>
@@ -70,7 +69,7 @@ export default function Navbar() {
 							Get In Touch
 						</Button>
 					</Link>
-					<ModeToggle />
+					{/* <ModeToggle /> */}
 				</div>
 				{/* Drawer toggle button */}
 				<div className="lg:hidden flex justify-end w-full">

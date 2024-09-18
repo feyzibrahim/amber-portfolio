@@ -74,7 +74,7 @@ export default function Footer() {
 					{/* Right arrow inside the input */}
 					<Link
 						href="mailto:amber@basys.ai"
-						className={`absolute inset-y-0 right-4 flex items-center z-40 bg-primary px-5 text-black hover:text-white cursor-pointer`}
+						className={`absolute inset-y-0 right-4 flex items-center z-40 bg-primary px-5 text-white hover:text-white cursor-pointer`}
 					>
 						<MoveRight />
 					</Link>
@@ -90,7 +90,7 @@ export default function Footer() {
 				<motion.div variants={childVariants}>
 					<Link
 						href=""
-						className="duration-300 hover:underline hover:text-primary"
+						className="duration-300 hover:underline hover:text-primary-hover"
 					>
 						Home
 					</Link>
@@ -98,7 +98,7 @@ export default function Footer() {
 				<motion.div variants={childVariants}>
 					<Link
 						href="#about"
-						className="duration-300 hover:underline hover:text-primary"
+						className="duration-300 hover:underline hover:text-primary-hover"
 					>
 						About
 					</Link>
@@ -106,7 +106,7 @@ export default function Footer() {
 				<motion.div variants={childVariants}>
 					<Link
 						href="#publications"
-						className="duration-300 hover:underline hover:text-primary"
+						className="duration-300 hover:underline hover:text-primary-hover"
 					>
 						Publications
 					</Link>
@@ -114,7 +114,7 @@ export default function Footer() {
 				<motion.div variants={childVariants}>
 					<Link
 						href="#articles"
-						className="duration-300 hover:underline hover:text-primary"
+						className="duration-300 hover:underline hover:text-primary-hover"
 					>
 						Articles
 					</Link>
@@ -122,7 +122,7 @@ export default function Footer() {
 				<motion.div variants={childVariants}>
 					<Link
 						href="#papers"
-						className="duration-300 hover:underline hover:text-primary"
+						className="duration-300 hover:underline hover:text-primary-hover"
 					>
 						Papers
 					</Link>
@@ -130,7 +130,7 @@ export default function Footer() {
 				<motion.div variants={childVariants}>
 					<Link
 						href="#featured-in"
-						className="duration-300 hover:underline hover:text-primary"
+						className="duration-300 hover:underline hover:text-primary-hover"
 					>
 						Featured In
 					</Link>
@@ -142,7 +142,7 @@ export default function Footer() {
 				<motion.p variants={childVariants}>Contact</motion.p>
 				<motion.p
 					variants={childVariants}
-					className="hover:text-primary duration-300 cursor-pointer"
+					className="hover:text-basys duration-300 cursor-pointer"
 				>
 					<Link href="mailto:amber@basys.ai">amber@basys.ai</Link>
 				</motion.p>
@@ -154,7 +154,7 @@ export default function Footer() {
 					<Link
 						href="https://www.linkedin.com/in/amber-nigam/"
 						target="_blank"
-						className="text-basys hover:underline z-20 hover:text-primary duration-300"
+						className="hover:underline z-20 hover:text-basys duration-300"
 					>
 						<Linkedin />
 					</Link>
@@ -163,7 +163,7 @@ export default function Footer() {
 					<Link
 						href="https://x.com/AmBeRnIgAm"
 						target="_blank"
-						className="text-basys hover:underline z-20 hover:text-primary duration-300"
+						className="hover:underline z-20 hover:text-basys duration-300"
 					>
 						<Twitter />
 					</Link>
@@ -172,7 +172,7 @@ export default function Footer() {
 					<Link
 						href="https://www.instagram.com/amber.nigam"
 						target="_blank"
-						className="text-basys hover:underline z-20 hover:text-primary duration-300"
+						className="hover:underline z-20 hover:text-basys duration-300"
 					>
 						<Instagram />
 					</Link>

@@ -18,11 +18,6 @@ export default function Home() {
 		triggerOnce: true, // Trigger only once
 	});
 
-	const { ref: ref2, inView: inView2 } = useInView({
-		threshold: 0.5,
-		triggerOnce: true,
-	});
-
 	return (
 		<div className="bg-background text-foreground">
 			<Navbar />
@@ -51,27 +46,11 @@ export default function Home() {
 
 			<AboutSection />
 
-			<div className="py-12 relative" id="publications">
-				<motion.h1
-					ref={ref2}
-					initial={{ opacity: 0, y: 100 }}
-					animate={inView2 ? { opacity: 1, y: 0 } : {}}
-					transition={{ duration: 0.8 }}
-					className={`text-4xl font-bold md:text-center px-5  z-20 ${outfit.className}`}
-				>
-					Publications
-				</motion.h1>
-				<motion.p
-					ref={ref2}
-					initial={{ opacity: 0, y: 100 }}
-					animate={inView2 ? { opacity: 1, y: 0 } : {}}
-					transition={{ duration: 0.8 }}
-					className={`font-light text-foreground-secondary px-5 md:w-2/3 mx-auto z-20 pt-5 md:text-center ${outfit.className}`}
-				>
-					Recognized across numerous reputable platforms, basys.ai's pioneering
-					work in AI-driven healthcare continues to solidify its position as an
-					industry leader and innovator.
-				</motion.p>
+			<div className="common-style relative" id="featured-in">
+				<FeaturedVideos />
+			</div>
+
+			<div className="common-style relative" id="publications">
 				<Publications />
 			</div>
 
@@ -81,9 +60,7 @@ export default function Home() {
 			<div className="common-style relative" id="papers">
 				<PublishedPapers />
 			</div>
-			<div className="common-style relative" id="featured-in">
-				<FeaturedVideos />
-			</div>
+
 			<Footer />
 		</div>
 	);

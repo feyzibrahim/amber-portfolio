@@ -62,7 +62,7 @@ export default function AboutSection() {
 			</motion.div>
 
 			{/* Right side: text and stats */}
-			<motion.div className="md:text-right flex flex-col justify-center gap-5">
+			<motion.div className="flex flex-col justify-center gap-5">
 				<motion.p variants={childVariants} className="text-primary">
 					About
 				</motion.p>
@@ -87,10 +87,7 @@ export default function AboutSection() {
 				</motion.p>
 
 				{/* Stats */}
-				<motion.div
-					variants={containerVariants}
-					className="flex justify-end gap-5 text-left"
-				>
+				<motion.div variants={containerVariants} className="flex gap-5">
 					<motion.div variants={childVariants}>
 						<h1 className="text-xl md:text-4xl font-bold">14+</h1>
 						<p>Years of experience</p>
@@ -106,10 +103,7 @@ export default function AboutSection() {
 						<p>Funds Raised</p>
 					</motion.div>
 				</motion.div>
-				<motion.div
-					variants={childVariants}
-					className="text-primary z-30 md:flex justify-end"
-				>
+				<motion.div variants={childVariants} className="text-primary z-30">
 					<Dialog>
 						<DialogTrigger asChild>
 							<button className="z-30 flex items-center gap-2 text-primary underline underline-offset-2 hover:underline-offset-4 duration-150 hover:text-primary-hover">
@@ -122,7 +116,7 @@ export default function AboutSection() {
 								Show More <ArrowRight className="w-5 h-5" />
 							</button>
 						</DialogTrigger>
-						<DialogContent className="rounded border-none bg-background-secondary">
+						<DialogContent className="rounded border-none bg-background">
 							<DialogHeader>
 								<DialogTitle>Amber Nigam</DialogTitle>
 								<DialogDescription>

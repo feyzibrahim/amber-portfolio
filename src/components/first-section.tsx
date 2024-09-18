@@ -1,9 +1,7 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-import Link from "next/link";
-import { Button } from "./ui/button";
 
 export default function FirstSection() {
 	// useInView for scroll-triggered animation
@@ -43,10 +41,10 @@ export default function FirstSection() {
 					className={`text-3xl md:text-5xl font-bold text-foreground z-20`}
 					variants={childVariants}
 				>
-					Amber <span className="text-primary">Nigam</span>
+					Amber Nigam
 				</motion.h1>
 				<motion.p className="text-foreground  z-20" variants={childVariants}>
-					Amber Nigam is the co-founder and CEO of Basys.ai, a digital health
+					Amber Nigam is the co-founder and CEO of basys.ai, a digital health
 					startup optimizing healthcare workflows with AI. A Harvard graduate,
 					his work in AI and healthcare has been recognized in top conferences
 					and journals.
@@ -58,7 +56,7 @@ export default function FirstSection() {
 				className="flex items-center justify-center mt-2 md:mt-0"
 			>
 				<Image
-					src="/amber.png"
+					src="/amber_g.png"
 					alt="Amber Nigam"
 					width={403}
 					height={448}

@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Publication from "./publication";
 import { ArrowRight, CircleChevronLeft, CircleChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import { outfit } from "@/app/fonts/fonts";
 
 export default function Publications() {
 	// All the articles
@@ -74,9 +76,13 @@ export default function Publications() {
 		},
 	];
 
-	const [isSliding, setIsSliding] = useState(false);
 	const carouselRef = useRef<HTMLDivElement>(null);
 	const carouselRef2 = useRef<HTMLDivElement>(null);
+
+	const { ref: ref2, inView: inView2 } = useInView({
+		threshold: 0.5,
+		triggerOnce: true,
+	});
 
 	useEffect(() => {
 		if (carouselRef.current) {
@@ -102,14 +108,30 @@ export default function Publications() {
 	};
 
 	return (
-		<div>
-			<motion.div
-				ref={carouselRef2}
-				transition={{ duration: 0.5 }}
-				className="pt-5 md:py-10"
+		<div className="space-y-5">
+			<motion.h1
+				ref={ref2}
+				initial={{ opacity: 0, y: 100 }}
+				animate={inView2 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className={`text-4xl font-bold md:text-center z-20 ${outfit.className}`}
 			>
+				Publications
+			</motion.h1>
+			<motion.p
+				ref={ref2}
+				initial={{ opacity: 0, y: 100 }}
+				animate={inView2 ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 0.8 }}
+				className={`font-light text-foreground-secondary md:w-2/3 mx-auto z-20 md:text-center ${outfit.className}`}
+			>
+				Recognized across numerous reputable platforms, basys.ai's pioneering work
+				in AI-driven healthcare continues to solidify its position as an industry
+				leader and innovator.
+			</motion.p>
+			<motion.div ref={carouselRef2} transition={{ duration: 0.5 }}>
 				{/* Carousel */}
-				<div className="px-5 md:px-40 grid grid-cols-1 md:grid-cols-3 gap-5">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 					{articles.slice(0, visibleArticles).map((article, index) => (
 						<Publication publication={article} index={index} key={index} />
 					))}

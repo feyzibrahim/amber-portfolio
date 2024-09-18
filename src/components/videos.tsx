@@ -82,7 +82,7 @@ export default function FeaturedVideos() {
 	});
 
 	return (
-		<div className="py-10 space-y-3">
+		<div className="space-y-5">
 			<motion.h1
 				ref={ref3}
 				initial={{ opacity: 0, y: 20 }}
@@ -98,7 +98,7 @@ export default function FeaturedVideos() {
 				initial={{ opacity: 0, y: 20 }}
 				animate={inView3 ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8 }}
-				className={`md:text-center ${outfit.className} md:w-2/3 mx-auto text-foreground-secondary pb-5`}
+				className={`md:text-center ${outfit.className} md:w-2/3 mx-auto text-foreground-secondary`}
 			>
 				Presented on renowned platforms such as TEDx, and at institutions like the
 				Mayo Clinic, Harvard, and MIT.
