@@ -44,7 +44,7 @@ export default function FeaturedVideos() {
 			type: "YouTube",
 			title: "Data Scientist Raises $2.4M to Automate Healthcare Authorizations and Reimbursements",
 			loc: "The SaaS CFO",
-			img: "/thumb/saas_cfo.jpg",
+			img: "/thumb/saas.png",
 		},
 		{
 			src: "https://podcasts.apple.com/us/podcast/bringing-artificial-intelligence-into-prior-authorization/id1485735357?i=1000669672537",

@@ -35,17 +35,17 @@ export default function FirstSection() {
 			variants={containerVariants}
 			initial="hidden"
 			animate={inView1 ? "visible" : "hidden"} // Only animate when in view
-			className="pt-10 common-style relative grid grid-cols-1 md:grid-cols-2 gap-0"
+			className="px-5 md:px-40 pt-5 md:py-10 md:min-h-screen relative md:grid grid-cols-1 md:grid-cols-2 gap-0"
 		>
 			{/* Title with staggered animation */}
 			<div className="flex flex-col justify-center gap-5 md:gap-10 z-20">
 				<motion.h1
-					className={`text-3xl md:text-5xl font-bold text-foreground`}
+					className={`text-3xl md:text-5xl font-bold text-foreground z-20`}
 					variants={childVariants}
 				>
 					Amber <span className="text-primary">Nigam</span>
 				</motion.h1>
-				<motion.p className="text-foreground" variants={childVariants}>
+				<motion.p className="text-foreground  z-20" variants={childVariants}>
 					Amber Nigam is the co-founder and CEO of Basys.ai, a digital health
 					startup optimizing healthcare workflows with AI. A Harvard graduate,
 					his work in AI and healthcare has been recognized in top conferences
@@ -55,7 +55,7 @@ export default function FirstSection() {
 			{/* Image with staggered animation */}
 			<motion.div
 				variants={childVariants}
-				className="flex items-center justify-center"
+				className="flex items-center justify-center mt-2 md:mt-0"
 			>
 				<Image
 					src="/amber.png"

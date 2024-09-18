@@ -86,15 +86,6 @@ export default function AuthoredArticles() {
 
 	return (
 		<div className=" md:py-10 space-y-3">
-			<motion.p
-				ref={ref3}
-				initial={{ opacity: 0, y: 20 }}
-				animate={inView3 ? { opacity: 1, y: 0 } : {}}
-				transition={{ duration: 0.8 }}
-				className={`text-primary uppercase md:text-center ${outfit.className}`}
-			>
-				Authored
-			</motion.p>
 			<motion.h1
 				ref={ref3}
 				initial={{ opacity: 0, y: 20 }}
@@ -102,7 +93,7 @@ export default function AuthoredArticles() {
 				transition={{ duration: 0.8 }}
 				className={`text-4xl font-bold md:text-center ${outfit.className}`}
 			>
-				Articles
+				Authored Articles
 			</motion.h1>
 
 			<motion.p
