@@ -42,6 +42,7 @@ export default function Footer() {
 			{/* Left Column with Name, Description, and Social Links */}
 			<motion.div variants={containerVariants} className="z-10 md:col-span-3">
 				{/* Input with right arrow */}
+				<motion.p variants={childVariants}>Get In Touch</motion.p>
 				<motion.div
 					variants={childVariants}
 					className="relative w-full md:w-2/3 mt-5"
