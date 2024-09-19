@@ -41,23 +41,6 @@ export default function Footer() {
 		>
 			{/* Left Column with Name, Description, and Social Links */}
 			<motion.div variants={containerVariants} className="z-10 md:col-span-3">
-				<motion.div variants={childVariants} className="flex items-center">
-					<h1 className="text-3xl font-semibold ">
-						Amber <span className="text-primary">Nigam</span>
-					</h1>
-				</motion.div>
-				<motion.p variants={childVariants} className="text-gray-400 mt-4">
-					CEO and Co-founder of{" "}
-					<Link
-						href="https://www.basys.ai/"
-						target="_blank"
-						className="text-card hover:underline hover:text-primary-hover"
-					>
-						basys.ai.
-					</Link>{" "}
-					Leading innovations in AI and healthcare.
-				</motion.p>
-
 				{/* Input with right arrow */}
 				<motion.div
 					variants={childVariants}
