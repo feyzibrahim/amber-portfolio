@@ -127,8 +127,8 @@ export default function PublishedPapers() {
 				transition={{ duration: 0.8 }}
 				className={`${outfit.className} text-foreground-secondary`}
 			>
-				Published research papers focused on advancements in AI, health data
-				science, and chronic disease management.
+				Published research papers focused on advancements in AI and health data
+				science
 			</motion.p>
 
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
