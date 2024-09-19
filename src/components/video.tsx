@@ -52,13 +52,21 @@ export default function Video({ index, article }: Props) {
 			>
 				{/* Conditional rendering based on article type */}
 				{article.type !== "Podcast" && article.img && (
-					<Image
-						src={article.img}
-						alt=""
-						width={958}
-						height={541}
-						className="md:h-48 w-full object-cover"
-					/>
+					<div className="relative">
+						<Image
+							src={article.img}
+							alt=""
+							width={958}
+							height={541}
+							className="md:h-48 w-full object-cover"
+						/>
+						{/* Centered play button */}
+						<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-opacity duration-300">
+							<button className="p-3 rounded-full text-white">
+								<CirclePlay className="w-10 h-10" />
+							</button>
+						</div>
+					</div>
 				)}
 
 				{article.type === "Podcast" && article.img && (
@@ -70,22 +78,13 @@ export default function Video({ index, article }: Props) {
 							height={541}
 							className="md:h-48 w-full object-cover"
 						/>
-						{/* Play button for podcast */}
-						<div className="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-40 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+						{/* Centered play button for podcast */}
+						<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 pointer-events-none">
 							<button className="p-3 rounded-full mt-14 text-white">
 								<CirclePlay className="w-10 h-10" />
 							</button>
 						</div>
 					</Link>
-				)}
-
-				{/* Play button for non-podcast */}
-				{article.type !== "Podcast" && (
-					<div className="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-40 group-hover:opacity-100 transition-opacity duration-300">
-						<button className="p-3 rounded-full text-white">
-							<CirclePlay className="w-10 h-10" />
-						</button>
-					</div>
 				)}
 
 				<h1 className="font-bold mt-2 px-5">{article.loc}</h1>
@@ -99,7 +98,7 @@ export default function Video({ index, article }: Props) {
 						{article.type === "YouTube" ? (
 							<iframe
 								src={article.src}
-								className="w-full h-[600px] rounded"
+								className="w-full md:h-[500px] rounded"
 							></iframe>
 						) : (
 							<video
