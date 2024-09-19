@@ -1,13 +1,16 @@
 "use client";
+import sendMail from "@/server/send-mail";
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, MoveRight, Twitter } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 export default function Footer() {
 	const [isFocused, setIsFocused] = useState(false);
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
+	const [submitted, setSubmitted] = useState(false);
 
 	const { ref, inView } = useInView({
 		triggerOnce: true,
@@ -31,6 +34,26 @@ export default function Footer() {
 		visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 	};
 
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault();
+
+		await sendMail(email, message);
+		setEmail("");
+		setMessage("");
+		setSubmitted(true); // Show success message
+	};
+
+	useEffect(() => {
+		if (submitted) {
+			const timer = setTimeout(() => {
+				setSubmitted(false);
+			}, 3000); // Hide after 3 seconds
+
+			// Cleanup timer if the component unmounts
+			return () => clearTimeout(timer);
+		}
+	}, [submitted]);
+
 	return (
 		<motion.div
 			ref={ref}
@@ -43,26 +66,48 @@ export default function Footer() {
 			<motion.div variants={containerVariants} className="z-10 md:col-span-3">
 				{/* Input with right arrow */}
 				<motion.p variants={childVariants}>Get In Touch</motion.p>
-				<motion.div
+				<motion.form
+					onSubmit={handleSubmit}
 					variants={childVariants}
 					className="relative w-full md:w-2/3 mt-5"
 				>
+					{/* Email Input */}
 					<input
-						type="text"
+						type="email"
 						placeholder="Enter your email"
-						className={`p-4 border border-primary w-[80%] bg-transparent rounded-md focus:outline-none pr-10 z-10`}
+						className={`p-4 border h-16 border-primary w-[80%] bg-transparent rounded-md focus:outline-none mb-4`}
 						autoComplete="off"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
 						onFocus={() => setIsFocused(true)}
 						onBlur={() => setIsFocused(false)}
+						required
 					/>
-					{/* Right arrow inside the input */}
-					<Link
-						href="mailto:amber@basys.ai"
-						className={`absolute inset-y-0 right-4 flex items-center z-40 bg-primary px-5 text-white hover:text-white cursor-pointer`}
+
+					{/* Message Box */}
+					<textarea
+						placeholder="Enter your message"
+						className="p-4 border border-primary w-full bg-transparent rounded-md focus:outline-none mb-4"
+						value={message}
+						onChange={(e) => setMessage(e.target.value)}
+						required
+					/>
+
+					{/* Submit Button */}
+					<button
+						type="submit"
+						className="absolute inset-y-0 right-0 h-16 flex items-center z-40 bg-primary px-5 text-white hover:text-white cursor-pointer"
 					>
 						<MoveRight />
-					</Link>
-				</motion.div>
+					</button>
+				</motion.form>
+
+				{/* Success Message */}
+				{submitted && (
+					<motion.p variants={childVariants} className="text-green-500">
+						Response has been submitted successfully.
+					</motion.p>
+				)}
 
 				<motion.p variants={childVariants} className="text-xs pt-5">
 					Copyright © 2024 Amber Nigam - All Rights Reserved.
