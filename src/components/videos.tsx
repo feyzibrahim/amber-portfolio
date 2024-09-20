@@ -63,8 +63,8 @@ export default function FeaturedVideos() {
 		{
 			src: "https://open.spotify.com/episode/5omEkOwR0DNuaAuVKVgZas",
 			type: "Podcast",
-			img: "/podcast/next.webp",
-			title: "Redefining Healthcare and Diabetes Cure Using AI",
+			img: "/podcast/next-in-time.png",
+			title: "Redefining Healthcare",
 			loc: "Next In Time",
 		},
 	];
