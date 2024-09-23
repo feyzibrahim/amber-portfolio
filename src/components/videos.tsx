@@ -33,7 +33,7 @@ export default function FeaturedVideos() {
 		},
 
 		{
-			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Cheng+Fellowship+%233.mp4",
+			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Cheng+Fellowship+%234.mp4",
 			type: "Uploaded",
 			title: "2023 SICI Showcase",
 			loc: "Harvard University",
