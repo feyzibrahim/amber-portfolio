@@ -1,5 +1,5 @@
 "use client";
-import sendMail from "@/server/send-mail";
+import { sendEmail } from "@/server/send-mail";
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, MoveRight, Twitter } from "lucide-react";
 import Link from "next/link";
@@ -8,8 +8,9 @@ import { useInView } from "react-intersection-observer";
 
 export default function Footer() {
 	const [isFocused, setIsFocused] = useState(false);
+	const [isLoading, setLoading] = useState(false);
 	const [email, setEmail] = useState("");
-	const [message, setMessage] = useState("");
+	const [message, setMessage] = useState<string>("");
 	const [submitted, setSubmitted] = useState(false);
 
 	const { ref, inView } = useInView({
@@ -36,11 +37,13 @@ export default function Footer() {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
+		setLoading(true);
 
-		await sendMail(email, message);
+		await sendEmail(email, message);
 		setEmail("");
 		setMessage("");
 		setSubmitted(true); // Show success message
+		setLoading(false);
 	};
 
 	useEffect(() => {
@@ -98,7 +101,13 @@ export default function Footer() {
 						type="submit"
 						className="absolute inset-y-0 right-0 h-16 flex items-center z-40 bg-primary px-5 text-white hover:text-white cursor-pointer"
 					>
-						<MoveRight />
+						{isLoading ? (
+							<div className="flex justify-center items-center">
+								<div className="animate-spin rounded-full h-5 w-5 border-t-4 border-b-4 border-"></div>
+							</div>
+						) : (
+							<MoveRight />
+						)}
 					</button>
 				</motion.form>
 

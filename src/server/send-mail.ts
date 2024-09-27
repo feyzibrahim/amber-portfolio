@@ -1,13 +1,27 @@
 "use server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-export default async function sendMail(sender: string, body: string) {
-	const resend = new Resend(process.env.RESEND_API_KEY);
+export async function sendEmail(email: string, message: string) {
+	try {
+		let transporter = nodemailer.createTransport({
+			service: "gmail",
+			auth: {
+				user: process.env.EMAIL_USER,
+				pass: process.env.EMAIL_PASS,
+			},
+		});
 
-	await resend.emails.send({
-		to: process.env.AMBER_EMAIL as string,
-		from: "no-replay@basys.ai",
-		subject: `Message From: ${sender}`,
-		html: `<p>${body}</p>`,
-	});
+		let mailOptions = {
+			from: email,
+			to: process.env.SENDER_EMAIL,
+			subject: `New Enquiry through www.ambernigam.com from: ${email}`,
+			text: message,
+		};
+
+		await transporter.sendMail(mailOptions);
+
+		return { success: true, message: "Email sent successfully!" };
+	} catch (error) {
+		return { success: false, message: "Error sending email", error };
+	}
 }
