@@ -40,10 +40,10 @@ export default function FeaturedVideos() {
 			img: "/thumb/sici.png",
 		},
 		{
-			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Amber+Maya+clinic+video.mp4",
+			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Amber+Maya+clinic+video+v2.mp4",
 			type: "Uploaded",
 			title: "Mayo Foundation for Medical Education and Research",
-			loc: "Harvard University",
+			loc: "Mayo Clinic Platform",
 			img: "/thumb/maya_clinic.png",
 		},
 		{
