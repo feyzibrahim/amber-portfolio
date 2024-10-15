@@ -16,6 +16,7 @@ export async function sendEmail(email: string, message: string) {
 			to: process.env.SENDER_EMAIL,
 			subject: `New Enquiry through www.ambernigam.com from: ${email}`,
 			text: message,
+			cc: process.env.SECONDARY_EMAIL,
 		};
 
 		await transporter.sendMail(mailOptions);
