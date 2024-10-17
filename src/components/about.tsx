@@ -131,20 +131,20 @@ export default function AboutSection() {
 												for health plans and health systems. In
 												this role, he leads business development,
 												strategy, and fundraising efforts, driven
-												by a deep passion for driving cost savings
-												and improving outcomes in healthcare.
+												by a passion for driving cost savings and
+												improving healthcare outcomes.
 											</p>
 											<p>
-												Amber holds an MS in Health Data Science
-												from Harvard University, where he was
-												recognized as a Cheng Fellow, Roslyn and
-												Lisle Payne Scholar, and a recipient of
-												the 40 under 40 award from the Boston
-												Congress of Public Health. Throughout his
-												academic career, he has contributed to
-												three patents and authored multiple
-												research papers on the intersection of AI
-												and healthcare.
+												Amber holds a Bachelor's degree in
+												Computer Science and a Master's in Health
+												Data Science from Harvard University,
+												where he was recognized as a Cheng Fellow,
+												Roslyn and Lisle Payne Scholar, and a
+												recipient of the 40 Under 40 Award from
+												the Boston Congress of Public Health. He
+												has contributed to three patents and
+												authored multiple research papers on the
+												intersection of AI and healthcare.
 											</p>
 											<p>
 												Previously, Amber founded kydots.ai, where
@@ -157,25 +157,24 @@ export default function AboutSection() {
 												acquisition.
 											</p>
 											<p>
-												A strong advocate for community and
-												collective leadership, Amber actively
-												mentors startups at TechStars, Harvard,
-												MIT, MassChallenge, and XLerateHealth. He
-												has also served as Co-Director of the
-												Harvard Business Club, providing strategic
-												support and fundraising guidance to
-												Harvard-affiliated founders.
+												Amber is a passionate advocate for
+												community and collective leadership. He
+												mentors startups through TechStars,
+												Harvard, MIT, MassChallenge, and
+												XLerateHealth, and has served as
+												Co-Director of the Harvard Business Club,
+												offering strategic support and fundraising
+												guidance to Harvard-affiliated founders.
 											</p>
 											<p>
 												An applied machine learning enthusiast,
 												Amber has contributed to both professional
-												and academic initiatives in the AI domain,
-												including co-instructing the
-												"Collaborative Data Science in Medicine -
-												HST.953" course at MIT. His work has been
-												featured at leading machine learning
-												conferences like NeurIPS and ACL, as well
-												as in prestigious journals such as Lancet
+												and academic initiatives in the AI domain.
+												He has co-instructed a collaborative data
+												science course at MIT, and his work has
+												been featured at leading conferences such
+												as NeurIPS and ACL, as well as in
+												prestigious journals including The Lancet
 												and Springer.
 											</p>
 											<p>
