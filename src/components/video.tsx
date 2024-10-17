@@ -95,10 +95,11 @@ export default function Video({ index, article }: Props) {
 			<Dialog open={isModalOpen} onOpenChange={setModalOpen}>
 				<DialogContent className="bg-background-secondary border-none md:p-10 md:max-w-[70%]">
 					<div className="relative">
-						{article.type === "YouTube" ? (
+						{article.type === "YouTube" || article.type === "Drive" ? (
 							<iframe
 								src={article.src}
 								className="w-full md:h-[500px] rounded"
+								allow="autoPlay"
 							></iframe>
 						) : (
 							<video

@@ -11,37 +11,37 @@ export default function FeaturedVideos() {
 	// All the videos
 	const videos = [
 		{
-			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/tedx.mp4",
-			type: "Uploaded",
+			src: "https://drive.google.com/file/d/1DYOpbF7mIWOGeGiMf_hdWKsdyPo8fD71/preview",
+			type: "Drive",
 			title: "Aligning incentives among key stakeholders of healthcare",
 			loc: "TEDx",
 			img: "/thumb/tedx.webp",
 		},
 		{
-			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Mayo+Clinic+%232.mp4",
-			type: "Uploaded",
+			src: "https://drive.google.com/file/d/1Q03vavk352sFN4cNYWEVzHPOs-2OkOwQ/preview",
+			type: "Drive",
 			title: "Mayo Clinic Platform_Accelerate: basys.ai",
 			loc: "Mayo Clinic Platform",
 			img: "/thumb/mayo.webp",
 		},
 		{
-			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Halcyon+Fellowship+-+Halcyon+2024+Health+Showcase+%233.mp4",
-			type: "Uploaded",
+			src: "https://drive.google.com/file/d/1pppVvDRjBNw8i1xZdHVGiBiThXMNVVJY/preview",
+			type: "Drive",
 			title: "Halcyon 2024 Health Showcase",
 			loc: "Halcyon",
 			img: "/thumb/halcyon.png",
 		},
 
 		{
-			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Cheng+Fellowship+%234.mp4",
-			type: "Uploaded",
+			src: "https://drive.google.com/file/d/1ZR9oe225H0lUzsKt0vP5NXlNQnlBx6jv/preview",
+			type: "Drive",
 			title: "2023 SICI Showcase",
 			loc: "Harvard University",
 			img: "/thumb/sici.png",
 		},
 		{
-			src: "https://amber-nigam-website-files.s3.us-west-2.amazonaws.com/Amber+Maya+clinic+video+v3.mp4",
-			type: "Uploaded",
+			src: "https://drive.google.com/file/d/1vK2JW087TFZGOQ-XKRjSlv6G-x6zK4R5/preview",
+			type: "Drive",
 			title: "Mayo Foundation for Medical Education and Research",
 			loc: "Mayo Clinic Platform",
 			img: "/thumb/maya_clinic.png",
