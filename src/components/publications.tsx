@@ -11,6 +11,14 @@ export default function Publications() {
 	// All the articles
 	const articles = [
 		{
+			title: "STAT News",
+			year: "2024",
+			src: "/pub/stat_news_logo.jpeg",
+			link: "https://www.statnews.com/2024/11/13/generative-ai-medicine-health-care-ai-racism/",
+			description:
+				"Several years ago, teams of scholars published groundbreaking research that pointed to racial biases in algorithms that helped direct patient care at major health systems in the U.S.",
+		},
+		{
 			title: "Forbes",
 			year: "2020",
 			src: "/pub/forbes.png",
@@ -18,6 +26,7 @@ export default function Publications() {
 			description:
 				"Long-term management of metabolic and chronic diseases represents the largest cost burden on the U.S. healthcare system. Founded in June 2021, basys.ai is a B2B SaaS platform that supports clinical decision-making for doctors using deep learning algorithms. ",
 		},
+
 		{
 			title: "The Harvard Gazette",
 			year: "2022",
