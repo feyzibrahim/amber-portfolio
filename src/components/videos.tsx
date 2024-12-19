@@ -46,13 +46,7 @@ export default function FeaturedVideos() {
 			loc: "Mayo Clinic Platform",
 			img: "/thumb/maya_clinic.png",
 		},
-		{
-			src: "https://www.youtube.com/embed/JotFXZFmAO4?autoplay=1&mute=1",
-			type: "YouTube",
-			title: "Data Scientist Raises $2.4M to Automate Healthcare Authorizations and Reimbursements",
-			loc: "The SaaS CFO",
-			img: "/thumb/saas.png",
-		},
+
 		{
 			src: "https://podcasts.apple.com/us/podcast/bringing-artificial-intelligence-into-prior-authorization/id1485735357?i=1000669672537",
 			type: "Podcast",
@@ -73,6 +67,13 @@ export default function FeaturedVideos() {
 			img: "/podcast/next-in-time.png",
 			title: "Redefining Healthcare",
 			loc: "Next In Time",
+		},
+		{
+			src: "https://www.youtube.com/embed/JotFXZFmAO4?autoplay=1&mute=1",
+			type: "YouTube",
+			title: "Data Scientist Raises $2.4M to Automate Healthcare Authorizations and Reimbursements",
+			loc: "The SaaS CFO",
+			img: "/thumb/saas.png",
 		},
 	];
 

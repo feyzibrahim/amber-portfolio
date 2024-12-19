@@ -1,15 +1,23 @@
 "use client";
-import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import Publication from "./publication";
-import { ArrowRight, CircleChevronLeft, CircleChevronRight } from "lucide-react";
-import Image from "next/image";
-import { useInView } from "react-intersection-observer";
 import { outfit } from "@/app/fonts/fonts";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import Publication from "./publication";
 
 export default function Publications() {
 	// All the articles
 	const articles = [
+		{
+			title: "Becker's Payer Issues | Payer News",
+			year: "2024",
+			src: "/pub/backers.png",
+			link: "https://www.beckerspayer.com/payer/scan-group-its-time-for-a-healthtech-moonshot.html",
+			description:
+				"Our healthcare system badly lags other industrialized nations in terms of what we spend and the outcomes we achieve, and the culprit is fairly obvious: we spend five times our peer nations on administrative expenses. How bad is it? Our doctors still rely heavily on faxes — yes, faxes — for communications. ",
+		},
 		{
 			title: "STAT News",
 			year: "2024",
