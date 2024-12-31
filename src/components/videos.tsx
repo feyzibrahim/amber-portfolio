@@ -11,7 +11,7 @@ export default function FeaturedVideos() {
 	// All the videos
 	const videos = [
 		{
-			src: "https://www.youtube.com/watch?v=4H0Cujqurk0&t=61s",
+			src: "https://www.youtube.com/embed/4H0Cujqurk0",
 			type: "YouTube",
 			title: "Smart Data Solutions and Basys.AI Partner for a Smarter, More Efficient Prior Authorization Process",
 			loc: "Smart Horizons HealthTech Symposium 2024",
